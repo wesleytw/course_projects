@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill-rule="evenodd"><path d="M 1.64863,88.8832 L 33.4611,41.1646 L 34.7845,39.1794 L 36.108,41.1646 L 67.9204,88.8832 L 69.5691,91.3562 L 66.597,91.3562 L 2.9721,91.3562 L 1.42109e-14,91.3562 L 1.64863,88.8832 z " style="fill-opacity:0.5;fill:rgb(0,0,153);stroke:rgb(0,0,200);stroke-width:2"/></g>
+<g fill-rule="evenodd"><path d="M 49.1001,57.9531 L 49.1001,10.2345 L 49.1001,8.64385 L 50.6907,8.64385 L 98.4094,8.64385 L 100,8.64385 L 100,10.2345 L 100,57.9531 L 100,59.5437 L 98.4094,59.5437 L 50.6907,59.5437 L 49.1001,59.5437 L 49.1001,57.9531 z " style="fill-opacity:0.5;fill:rgb(0,0,153);stroke:rgb(0,0,200);stroke-width:2"/></g>
+<g fill-rule="evenodd"><path d="M 2.9721,89.7655 L 34.7845,42.0469 L 66.597,89.7655 L 2.9721,89.7655 z " style="fill-opacity:0.5;fill:rgb(0,110,15);stroke:rgb(0,110,200);stroke-width:2"/></g>
+<g fill-rule="evenodd"><path d="M 50.6907,57.9531 L 50.6907,10.2345 L 98.4094,10.2345 L 98.4094,57.9531 L 50.6907,57.9531 z " style="fill-opacity:0.5;fill:rgb(0,110,15);stroke:rgb(0,110,200);stroke-width:2"/></g>
+</svg>
