@@ -17,6 +17,7 @@ typedef boost::geometry::model::box<point> box;
 typedef read_spec::spec::layer layer;
 using read_spec::func::readSpecFile;
 using read_spec::spec::vec_layers;
+// using read_spec::spec::layer::texts;
 
 void getMultiSvgs(multi_polygon);
 tuple<multi_polygon, box> getMaxUnion(vector<layer>);
@@ -92,6 +93,8 @@ void setPins(const vector<layer> vec_layers, multi_polygon mp, box box)
   with_pins_mapper.map(mp, "fill-opacity:0.5;fill:rgb(160,0,0);stroke:rgb(200,20,0);stroke-width:0.5");
   with_pins_mapper.add(pins);
   with_pins_mapper.map(pins, "fill-opacity:0.5;fill:rgb(0,110,0);");
-
-  // with_pins_mapper.text(point(5,5), "(5,5)", "fill-opacity:0.5;fill:rgb(0,0,0);",1,1);
+  for (int i = 0; i < vec_layers[0].texts.size(); i++)
+  {
+    with_pins_mapper.text(point(vec_layers[0].texts[i].p1, vec_layers[0].texts[i].p2), vec_layers[0].texts[i].name, "fill-opacity:0.5;fill:rgb(220,220,220);font-size:6px;", 0, 0);
+  }
 }

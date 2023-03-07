@@ -11,11 +11,24 @@ namespace read_spec
     public:
       string layer_name;
       int number_of_layers, number_of_polygons, number_of_rectngles, number_of_texts;
-      vector<string> polygons, rectangles, texts;
+      vector<string> polygons, rectangles;
       layer(string layer_name)
       {
         layer_name = layer_name;
       }
+      class text
+      {
+      public:
+        string name;
+        int p1, p2;
+        text(string s, int x, int y)
+        {
+          name = s;
+          p1 = x;
+          p2 = y;
+        };
+      };
+      vector<text> texts;
     };
     vector<layer> vec_layers; // vec_layers[No.metal-1]
   }
@@ -64,9 +77,13 @@ namespace read_spec
 
       for (int i = 0; i < number_of_texts; i++)
       {
-        getline(spec_file, spec_text);                          // 1    0  0,  0 10,  10 10,  10 0,  0  0
-        int m = stoi(spec_text.substr(0, spec_text.find(' '))); // https://stackoverflow.com/questions/18624345/split-string-at-space-and-return-first-element-in-c
-        vec_layers[m - 1].texts.push_back(spec_text.substr((to_string(m)).length()));
+        int m, p1, p2;
+        string text_name;
+        spec_file >> m; // 1    0  0,  0 10,  10 10,  10 0,  0  0
+        spec_file >> text_name;
+        spec_file >> p1;
+        spec_file >> p2;
+        vec_layers[m - 1].texts.push_back(read_spec::spec::layer::text(text_name, p1, p2));
       }
       spec_file.close();
     }
