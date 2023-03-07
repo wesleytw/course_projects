@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream> // svg
+#include <vector>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/box.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -14,29 +15,42 @@ typedef boost::geometry::model::polygon<point> polygon;
 typedef boost::geometry::model::multi_polygon<polygon> multi_polygon;
 typedef boost::geometry::model::box<point> box;
 
+class layer;
+void readSpecFile(vector<layer> &);
 void getMultiSvgs(multi_polygon);
 void get5Uni(string, string, string, string, string);
-tuple<multi_polygon, box> getMaxUnion(const string *arr);
+tuple<multi_polygon, box> getMaxUnion(vector<layer>);
 tuple<string *, string *> parser(); // return type: address of string array
-void setPins(const string *pins, multi_polygon mp, box box);
+void setPins(const vector<layer> vec_layers, multi_polygon mp, box box);
 
-int num_layers, num_polys, num_rects, num_texts;
+class layer
+{
+public:
+  string layer_name;
+  int number_of_layers, number_of_polygons, number_of_rectngles, number_of_texts;
+  vector<string> polygons, rectangles, texts;
+  layer(string layer_name)
+  {
+    layer_name = layer_name;
+  }
+};
 
 int main()
 {
-  auto [arr_polys, arr_rects] = parser();
-  auto [mp, box] = getMaxUnion(arr_polys);
-  setPins(arr_rects, mp, box); // arr_rects  == pins
+  vector<layer> vec_layers; // vec_layers[No.metal-1]
+  readSpecFile(vec_layers);
+  auto [mp, box] = getMaxUnion(vec_layers);
+  setPins(vec_layers, mp, box); // rects  == pins
 
   return 0;
 }
 
-tuple<multi_polygon, box> getMaxUnion(const string *arr)
+tuple<multi_polygon, box> getMaxUnion(const vector<layer> vec_layers)
 {
   string multi_polys;
-  for (int i = 0; i < num_polys; i++)
+  for (int i = 0; i < vec_layers[0].polygons.size(); i++)
   {
-    multi_polys = multi_polys + "((" + arr[i] + ")),";
+    multi_polys = multi_polys + "((" + vec_layers[0].polygons[i] + ")),";
   }
   multi_polys = "MULTIPOLYGON(" + multi_polys + ")";
 
@@ -84,12 +98,12 @@ void getMultiSvgs(multi_polygon mp)
   mp_mapper.map(mp, "fill-opacity:0.5;fill:rgb(160,0,0);stroke:rgb(200,20,0);stroke-width:2");
 }
 
-void setPins(const string *arr, multi_polygon mp, box box)
+void setPins(const vector<layer> vec_layers, multi_polygon mp, box box)
 {
   string multi_pins;
-  for (int i = 0; i < num_rects; i++)
+  for (int i = 0; i < vec_layers[0].rectangles.size(); i++)
   {
-    multi_pins = multi_pins + "((" + arr[i] + ")),";
+    multi_pins = multi_pins + "((" + vec_layers[0].rectangles[i] + ")),";
   }
   multi_pins = "MULTIPOLYGON(" + multi_pins + ")";
   boost::geometry::model::multi_polygon<polygon> pins;
@@ -106,46 +120,53 @@ void setPins(const string *arr, multi_polygon mp, box box)
   // with_pins_mapper.text(point(5,5), "(5,5)", "fill-opacity:0.5;fill:rgb(0,0,0);",1,1);
 }
 
-tuple<string *, string *> parser() // return type: address of string array
+void readSpecFile(vector<layer> &vec_layers)
 {
-  cout << "number_of_polygons ";
-  cin >> num_polys;
-  string *arr_polys = new string[num_polys];
-  for (int i = 0; i < num_polys; i++)
-  {
-    cout << i + 1 << " ";
-    getline(cin >> ws, arr_polys[i]); // not stop by white space(std::ws)
-  }
-  cout << "end_of_polygons" << endl;
-  cout << "number_of_rectangles: ";
-  cin >> num_rects;
-  string *arr_rects = new string[num_rects];
-  for (int i = 1; i <= num_rects; i++)
-  {
-    cout << i << " ";
-    getline(cin >> ws, arr_rects[i]); // not stop by white space(std::ws)
-  }
-  cout << "end_of_rectangles" << endl;
-  return {arr_polys, arr_rects};
-}
+  string spec_text;
+  ifstream spec_file("../spec.txt");
+  getline(spec_file, spec_text);
 
-// number_of_layers 1
-// layer 1   M1
-// end_of_layer
-// number_of_polygons  5
-// 1    0  0,  0 10,  10 10,  10 0,  0  0
-// 1   12  3,   12  30,   32 30,  32  3,   12 3
-// 1   30  0,   30  5,    40  5,    40 0,    30 0
-// 1    0 40,    0  50,    6  50,    6  40,   0 40
-// 1   30  42,  30 50,   40  50,  40 42,  30 42
-// end_of_polygon
-// number_of_rectangles  3
-// 1  0 20, 0 24, 3 24, 3 20, 0 20
-// 1  13 46, 13 50, 17 50, 17 46, 13 46
-// 1  38 10, 38 13, 40 13, 40 10, 38 10
-// end_of_rectangle
-// number_of_texts   3
-// 1  C    21  21
-// 1  A   14  47
-// 1  B   39  12
-// end_of_text
+  int number_of_layers = stoi(spec_text.substr(16));
+
+  for (int i = 0; i < number_of_layers; i++)
+  {
+    getline(spec_file, spec_text); // layer 1   M1
+    layer m(spec_text.substr(8));
+    vec_layers.push_back(m);
+  }
+  getline(spec_file, spec_text); // end_of_layer
+  getline(spec_file, spec_text); // number_of_polygons
+
+  int number_of_polygons = stoi(spec_text.substr(18));
+
+  for (int i = 0; i < number_of_polygons; i++)
+  {
+    getline(spec_file, spec_text);                          // 1    0  0,  0 10,  10 10,  10 0,  0  0
+    int m = stoi(spec_text.substr(0, spec_text.find(' '))); // https://stackoverflow.com/questions/18624345/split-string-at-space-and-return-first-element-in-c
+    vec_layers[m - 1].polygons.push_back(spec_text.substr((to_string(m)).length()));
+  }
+  getline(spec_file, spec_text); // end_of_polygon
+  getline(spec_file, spec_text); // number_of_rectangles
+
+  int number_of_rectangles = stoi(spec_text.substr(20));
+
+  for (int i = 0; i < number_of_rectangles; i++)
+  {
+    getline(spec_file, spec_text);                          // 1    0  0,  0 10,  10 10,  10 0,  0  0
+    int m = stoi(spec_text.substr(0, spec_text.find(' '))); // https://stackoverflow.com/questions/18624345/split-string-at-space-and-return-first-element-in-c
+    vec_layers[m - 1].rectangles.push_back(spec_text.substr((to_string(m)).length()));
+  }
+  getline(spec_file, spec_text); // end_of_rectangles
+  getline(spec_file, spec_text); // number_of_texts
+
+  int number_of_texts = stoi(spec_text.substr(15));
+
+  for (int i = 0; i < number_of_texts; i++)
+  {
+    getline(spec_file, spec_text);                          // 1    0  0,  0 10,  10 10,  10 0,  0  0
+    int m = stoi(spec_text.substr(0, spec_text.find(' '))); // https://stackoverflow.com/questions/18624345/split-string-at-space-and-return-first-element-in-c
+    vec_layers[m - 1].texts.push_back(spec_text.substr((to_string(m)).length()));
+  }
+  spec_file.close();
+  // cout << number_of_layers << number_of_rectangles << endl;
+}

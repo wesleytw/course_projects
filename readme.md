@@ -8,7 +8,7 @@ Please write a parser to read in all the polygons, rectangles and texts.
 3) Then, carve out pin shapes from the big blockage obtained in (1). In this exercise, please use 0.5 as min spacing for M1 (in other words, you need to leave 0.5 spacing around the pin shapes.)    
 
 ### Spec:  
-the first number indicates the ```metal```  
+the first number indicates the ```No.metal```  
 
 ```number_of_layers 1
 layer 1   M1
