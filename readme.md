@@ -5,4 +5,29 @@ Merge several M1 shapes and produce M1 blockages as big as possible. Then, there
 Please write a parser to read in all the polygons, rectangles and texts.
 1) Find the smallest enclosing rectangle of all these objects. This rectangle serves as a big blockage.
 2) From the texts and their locations, please identify which shapes will be touched by them. Those shapes will become pins for future connections.
-3) Then, carve out pin shapes from the big blockage obtained in (1). In this exercise, please use 0.5 as min spacing for M1 (in other words, you need to leave 0.5 spacing around the pin shapes.)
+3) Then, carve out pin shapes from the big blockage obtained in (1). In this exercise, please use 0.5 as min spacing for M1 (in other words, you need to leave 0.5 spacing around the pin shapes.)    
+
+### Spec:  
+the first number indicates the ```metal```  
+
+```number_of_layers 1
+layer 1   M1
+end_of_layer
+number_of_polygons  5
+1    0  0,  0 10,  10 10,  10 0,  0  0
+1   12  3,   12  30,   32 30,  32  3,   12 3
+1   30  0,   30  5,    40  5,    40 0,    30 0
+1    0 40,    0  50,    6  50,    6  40,   0 40
+1   30  42,  30 50,   40  50,  40 42,  30 42
+end_of_polygon
+number_of_rectangles  3
+1  0 20, 0 24, 3 24, 3 20, 0 20
+1  13 46, 13 50, 17 50, 17 46, 13 46
+1  38 10, 38 13, 40 13, 40 10, 38 10
+end_of_rectangle
+number_of_texts   3
+1  C    21  21
+1  A   14  47
+1  B   39  12
+end_of_text
+```
