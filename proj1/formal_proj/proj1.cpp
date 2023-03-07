@@ -18,9 +18,7 @@ typedef boost::geometry::model::box<point> box;
 class layer;
 void readSpecFile(vector<layer> &);
 void getMultiSvgs(multi_polygon);
-void get5Uni(string, string, string, string, string);
 tuple<multi_polygon, box> getMaxUnion(vector<layer>);
-tuple<string *, string *> parser(); // return type: address of string array
 void setPins(const vector<layer> vec_layers, multi_polygon mp, box box);
 
 class layer
@@ -67,27 +65,6 @@ tuple<multi_polygon, box> getMaxUnion(const vector<layer> vec_layers)
   box_mapper.add(mp);
   box_mapper.map(mp, "fill-opacity:0.5;fill:rgb(160,0,0);stroke:rgb(200,20,0);stroke-width:2");
   return {mp, box};
-}
-
-void get5Uni(string s1, string s2, string s3, string s4, string s5)
-{
-  polygon p1, p2, p3, p4, p5;
-  boost::geometry::read_wkt(
-      "POLYGON((0  0,  0 10,  10 10,  10 0,  0  0))", p1);
-  boost::geometry::read_wkt(
-      "POLYGON((12  3,   12  30,   32 30,  32  3,   12 3))", p2);
-  boost::geometry::model::multi_polygon<polygon> output;
-  boost::geometry::union_(p1, p2, output);
-  boost::geometry::model::box<point> box;
-  boost::geometry::envelope(output, box);
-  std::ofstream box_svg("box.svg");
-  boost::geometry::svg_mapper<point> box_mapper(box_svg, 100, 100);
-  box_mapper.add(box);
-  box_mapper.map(box, "fill-opacity:0.5;fill:rgb(160,0,0);stroke:rgb(0,200,0);stroke-width:2");
-  box_mapper.add(p1);
-  box_mapper.map(p1, "fill-opacity:0.5;fill:rgb(10,0,0);stroke:rgb(0,200,0);stroke-width:2");
-  box_mapper.add(p2);
-  box_mapper.map(p2, "fill-opacity:0.5;fill:rgb(10,0,0);stroke:rgb(0,200,0);stroke-width:2");
 }
 
 void getMultiSvgs(multi_polygon mp)
