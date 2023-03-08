@@ -10,7 +10,8 @@ Please write a parser to read in all the polygons, rectangles and texts.
 ### Spec:  
 the first number indicates the ```No.metal```  
 
-```number_of_layers 1
+```
+number_of_layers 1
 layer 1   M1
 end_of_layer
 number_of_polygons  5
@@ -19,15 +20,16 @@ number_of_polygons  5
 1   30  0,   30  5,    40  5,    40 0,    30 0
 1    0 40,    0  50,    6  50,    6  40,   0 40
 1   30  42,  30 50,   40  50,  40 42,  30 42
+  
 end_of_polygon
 number_of_rectangles  3
-1  0 20, 0 24, 3 24, 3 20, 0 20
-1  13 46, 13 50, 17 50, 17 46, 13 46
-1  38 10, 38 13, 40 13, 40 10, 38 10
+1  0 20,  3  24
+1  13  46,  17 50
+1  38  10,  40  13
 end_of_rectangle
 number_of_texts   3
-1  C    21  21
+1  C    1  21 
 1  A   14  47
-1  B   39  12
+1  B   39  12    
 end_of_text
 ```

@@ -13,7 +13,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 <g fill-rule="evenodd"><path d="M 10,60 L 10,52 L 16,52 L 16,60 L 10,60 z " style="fill-opacity:0.5;fill:rgb(0,110,0);"/></g>
 <g fill-rule="evenodd"><path d="M 36,8 L 36,0 L 44,0 L 44,8 L 36,8 z " style="fill-opacity:0.5;fill:rgb(0,110,0);"/></g>
 <g fill-rule="evenodd"><path d="M 86,80 L 86,74 L 90,74 L 90,80 L 86,80 z " style="fill-opacity:0.5;fill:rgb(0,110,0);"/></g>
-<text style="fill-opacity:0.5;fill:rgb(220,220,220);font-size:6px;" x="52" y="58">C</text>
+<text style="fill-opacity:0.5;fill:rgb(220,220,220);font-size:6px;" x="12" y="58">C</text>
 <text style="fill-opacity:0.5;fill:rgb(220,220,220);font-size:6px;" x="38" y="6">A</text>
 <text style="fill-opacity:0.5;fill:rgb(220,220,220);font-size:6px;" x="88" y="76">B</text>
 </svg>

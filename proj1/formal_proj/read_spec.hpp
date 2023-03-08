@@ -1,3 +1,8 @@
+/*
+  todo:
+  1. texts touch pins
+  2. input error detection
+*/
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -66,11 +71,16 @@ namespace read_spec
 
       for (int i = 0; i < number_of_rectangles; i++)
       {
-        getline(spec_file, spec_text);                          // 1    0  0,  0 10,  10 10,  10 0,  0  0
-        int m = stoi(spec_text.substr(0, spec_text.find(' '))); // https://stackoverflow.com/questions/18624345/split-string-at-space-and-return-first-element-in-c
-        vec_layers[m - 1].rectangles.push_back(spec_text.substr((to_string(m)).length()));
+        int m;
+        string hx, lx, ly;
+        string hy, text_name;
+        spec_file >> m >> hx >> hy >> lx >> ly; // 1    0  0,  0 10,  10 10,  10 0,  0  0
+        // 1  0 20, 0 24, 3 24, 3 20, 0 20
+        // 1  hx0  hy20,  lx3  ly24
+       vec_layers[m - 1].rectangles.push_back(hx + " " + hy + hx + " " + ly + ", " + lx + " " + ly + ", " + lx + " " + hy + hx + " " + hy);
       }
       getline(spec_file, spec_text); // end_of_rectangles
+      getline(spec_file, spec_text); // \n
       getline(spec_file, spec_text); // number_of_texts
 
       int number_of_texts = stoi(spec_text.substr(15));
