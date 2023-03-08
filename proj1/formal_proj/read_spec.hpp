@@ -37,7 +37,7 @@ namespace read_spec
     void readSpecFile(vector<read_spec::spec::layer> &vec_layers)
     {
       string spec_text;
-      ifstream spec_file("../spec.txt");
+      ifstream spec_file("./spec.txt");
       getline(spec_file, spec_text);
 
       int number_of_layers = stoi(spec_text.substr(16));
