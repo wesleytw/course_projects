@@ -75,14 +75,13 @@ boost::geometry::strategy::buffer::point_circle point_strategy;
 boost::geometry::model::multi_polygon<polygon> lg_pins;
 void setPins(vector<layer> vec_layers, multi_polygon mp, box box)
 {
-
   for (int i = 0; i < vec_layers[0].polygons.size(); i++)
   {
     boost::geometry::model::polygon<point> po;
     boost::geometry::read_wkt("POLYGON((" + vec_layers[0].polygons[i] + "))", po);
     for (int j = 0; j < vec_layers[0].texts.size(); j++)
     {
-      if (boost::geometry::touches(point(vec_layers[0].texts[j].p1, vec_layers[0].texts[j].p2), po))
+      if (boost::geometry::within(point(vec_layers[0].texts[j].p1, vec_layers[0].texts[j].p2), po))
       {
         vec_layers[0].pins.push_back(vec_layers[0].polygons[i]);
       }
@@ -100,6 +99,7 @@ void setPins(vector<layer> vec_layers, multi_polygon mp, box box)
       }
     }
   }
+
   string multi_pins;
   for (int i = 0; i < vec_layers[0].pins.size(); i++)
   {
@@ -115,7 +115,7 @@ void setPins(vector<layer> vec_layers, multi_polygon mp, box box)
   boost::geometry::model::multi_polygon<polygon> no_pins;
   boost::geometry::difference(box, lg_pins, no_pins);
   std::ofstream with_pins_svg("with_pins.svg");
-  boost::geometry::svg_mapper<point> with_pins_mapper(with_pins_svg, 400, 400);
+  boost::geometry::svg_mapper<point> with_pins_mapper(with_pins_svg, 100, 100);
   with_pins_mapper.add(no_pins);
   with_pins_mapper.map(no_pins, "fill-opacity:0.8;fill:rgb(0,0,220);stroke:rgb(0,0,230);stroke-width:0.5");
   with_pins_mapper.add(mp);
