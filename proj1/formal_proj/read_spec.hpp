@@ -16,7 +16,7 @@ namespace read_spec
     public:
       string layer_name;
       int number_of_layers, number_of_polygons, number_of_rectngles, number_of_texts;
-      vector<string> polygons, rectangles;
+      vector<string> polygons, rectangles, pins;
       layer(string layer_name)
       {
         layer_name = layer_name;

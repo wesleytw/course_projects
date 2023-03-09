@@ -1,5 +1,5 @@
 # Projects of Design Automation 2 (11120CSR530300)  
-## lecturer: 李炯霆教授  
+
 ### project 1:
 Merge several M1 shapes and produce M1 blockages as big as possible. Then, there are shapes defining a pin. We need to carve out those pin shapes for connection.  
 Please write a parser to read in all the polygons, rectangles and texts.
