@@ -58,11 +58,10 @@ This program reads the spec from spec.txt and saves the shapes and texts as OBJE
 ![box](https://raw.githubusercontent.com/wesleytw/eda_course_projects/d2d609181d56a2b28765cac07f5dbe287a4958b7/proj1/formal_proj/box.svg)
 
 #### 3. Find which shapes are touched by texts and define them as pins by using ```boost::geometry::within```. If a text locates in a shape, that shape serves as pin. Then, carve out pin shapes from the big blockage by using the enlarged pins. Check out the result in ```pins_union_blockage.svg```. 
-![box](https://raw.githubusercontent.com/wesleytw/eda_course_projects/d2d609181d56a2b28765cac07f5dbe287a4958b7/proj1/group3_proj1_v1/pins_union_blockage.svg)
+![pins_union_blockage](https://raw.githubusercontent.com/wesleytw/eda_course_projects/master/proj1/group3_proj1_v1/pins_union_blockage.svg)
 
-#### 3. Test if the program could find the correct pins and blockage with different spec. Check out the result in ```test_diff_text.svg```. 
-![box](https://raw.githubusercontent.com/wesleytw/eda_course_projects/d2d609181d56a2b28765cac07f5dbe287a4958b7/proj1/group3_proj1_v1/test_diff_text.svg)
-
+#### 4. Test if the program could find the correct pins and blockage with different spec. Check out the result in ```test_diff_text.svg```. 
+![test_diff_text](https://raw.githubusercontent.com/wesleytw/eda_course_projects/master/proj1/group3_proj1_v1/test_diff_text.svg)
 
 
 
