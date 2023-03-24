@@ -6,7 +6,15 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/point_xy.hpp>
+#include <boost/geometry/geometries/polygon.hpp>
+#include <boost/geometry/io/wkt/wkt.hpp>
 using namespace std;
+
+typedef boost::geometry::model::d2::point_xy<double> point;
+typedef boost::geometry::model::polygon<point> polygon;
+
 namespace read_spec
 {
   namespace spec
@@ -23,13 +31,30 @@ namespace read_spec
       class rect
       {
       public:
-        string str_poly;
-        int p1, p2;
-        rect(string s, int x, int y)
+        string str_rect;
+        double hx, hy, lx, ly, x, y, w, l;
+        boost::geometry::model::polygon<point> poly_rect;
+
+        rect(string x1, string y1, string x2, string y2)
         {
-          str_poly = s;
-          p1 = x;
-          p2 = y;
+          str_rect = (x2 + " " + y2 + ", ") + (x2 + " " + y1 + " ") + (x1 + " " + y1 + " ") + (x1 + " " + y2 + ", ") + (x2 + " " + y2);
+          boost::geometry::read_wkt("POLYGON((" + str_rect + "))", poly_rect);
+          hx = stod(x1);
+          hy = stod(y1);
+          lx = stod(x2);
+          ly = stod(y2);
+          x = abs(hx - lx);
+          y = abs(hy - ly);
+          if (x > y)
+          {
+            l = x;
+            w = y;
+          }
+          else
+          {
+            w = x;
+            l = y;
+          }
         };
       };
       vector<rect> vec_rects;
@@ -60,14 +85,10 @@ namespace read_spec
       for (int i = 0; i < number_of_rectangles; i++)
       {
         int m = 0;
-        string hx, lx, ly;
-        string hy, text_name;
+        string hx, hy, lx, ly;
         spec_file >> m >> hx >> hy >> lx >> ly; // 1    0  0,  0 10,  10 10,  10 0,  0  0
-        // 1  0 20, 0 24, 3 24, 3 20, 0 20
-        // 1  hx0  hy20,  lx3  ly24
-        // vec_layers[m - 1].vec_rects.push_back(hx + " " + hy + hx + " " + ly + ", " + lx + " " + ly + ", " + lx + " " + hy + hx + " " + hy);
-        string str_rect = hx + " " + hy + hx + " " + ly + ", " + lx + " " + ly + ", " + lx + " " + hy + hx + " " + hy;
-        read_spec::spec::layer::rect in_rect(str_rect);
+        read_spec::spec::layer::rect input_rect(hx, hy, lx, ly);
+        vec_layers[m - 1].vec_rects.push_back(input_rect);
       }
       getline(spec_file, spec_text); // end_of_rectangles
       spec_file.close();

@@ -10,7 +10,7 @@ number_of_layers 1
 layer 1   M1
 end_of_layer
 number_of_rectangles  6
-1  0  4.0,   7.8  0.6
+1  0  4.0,   7.8  0.6  # should be 4.0 0, 7.8 0.6  
 1  0 1.0,   6.1  1.6
 1  2.0  2.0,  4.0  2.6
 1  7.0  1.0,  14 1.6
