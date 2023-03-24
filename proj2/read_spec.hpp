@@ -1,8 +1,3 @@
-/*
-  todo:
-  1. texts touch pins
-  2. input error detection
-*/
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -19,6 +14,7 @@ namespace read_spec
 {
   namespace spec
   {
+    // vector<string> vec_warnings;
     class layer
     {
     public:
@@ -31,18 +27,19 @@ namespace read_spec
       class rect
       {
       public:
-        string str_rect;
+        string str_rect, color_fill, color_stroke;
         double hx, hy, lx, ly, x, y, w, l;
         boost::geometry::model::polygon<point> poly_rect;
 
         rect(string x1, string y1, string x2, string y2)
         {
           str_rect = (x2 + " " + y2 + ", ") + (x2 + " " + y1 + " ") + (x1 + " " + y1 + " ") + (x1 + " " + y2 + ", ") + (x2 + " " + y2);
+          cout <<str_rect;
           boost::geometry::read_wkt("POLYGON((" + str_rect + "))", poly_rect);
-          hx = stod(x1);
-          hy = stod(y1);
-          lx = stod(x2);
-          ly = stod(y2);
+          lx = stod(x1);
+          ly = stod(y1);
+          hx = stod(x2);
+          hy = stod(y2);
           x = abs(hx - lx);
           y = abs(hy - ly);
           if (x > y)
@@ -55,6 +52,8 @@ namespace read_spec
             w = x;
             l = y;
           }
+          color_fill = "rgb(10,220,0)";
+          color_stroke = "rgb(50,110,0)";
         };
       };
       vector<rect> vec_rects;
@@ -86,8 +85,8 @@ namespace read_spec
       {
         int m = 0;
         string hx, hy, lx, ly;
-        spec_file >> m >> hx >> hy >> lx >> ly; // 1    0  0,  0 10,  10 10,  10 0,  0  0
-        read_spec::spec::layer::rect input_rect(hx, hy, lx, ly);
+        spec_file >> m  >> lx >> ly>> hx >> hy; // 1    0  0,  0 10,  10 10,  10 0,  0  0
+        read_spec::spec::layer::rect input_rect( lx, ly,hx, hy);
         vec_layers[m - 1].vec_rects.push_back(input_rect);
       }
       getline(spec_file, spec_text); // end_of_rectangles

@@ -4,10 +4,16 @@
 <svg width="100%" height="100%" version="1.1"
 xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink">
-<g fill-rule="evenodd"><path d="M 111.429,111.429 L 111.429,120 L 57.1429,120 L 57.1429,111.429 L 111.429,111.429 z " style="fill-opacity:0.5;fill:rgb(10,220,0);stroke:rgb(0,120,0);stroke-width:2"/></g>
-<g fill-rule="evenodd"><path d="M 87.1429,97.1429 L 87.1429,105.714 L 0,105.714 L 0,97.1429 L 87.1429,97.1429 z " style="fill-opacity:0.5;fill:rgb(10,220,0);stroke:rgb(0,120,0);stroke-width:2"/></g>
-<g fill-rule="evenodd"><path d="M 57.1429,82.8571 L 57.1429,91.4286 L 28.5714,91.4286 L 28.5714,82.8571 L 57.1429,82.8571 z " style="fill-opacity:0.5;fill:rgb(10,220,0);stroke:rgb(0,120,0);stroke-width:2"/></g>
-<g fill-rule="evenodd"><path d="M 200,97.1429 L 200,105.714 L 100,105.714 L 100,97.1429 L 200,97.1429 z " style="fill-opacity:0.5;fill:rgb(10,220,0);stroke:rgb(0,120,0);stroke-width:2"/></g>
-<g fill-rule="evenodd"><path d="M 157.143,94.2857 L 157.143,108.571 L 148.571,108.571 L 148.571,94.2857 L 157.143,94.2857 z " style="fill-opacity:0.5;fill:rgb(10,220,0);stroke:rgb(0,120,0);stroke-width:2"/></g>
-<g fill-rule="evenodd"><path d="M 200,80 L 200,88.5714 L 122.857,88.5714 L 122.857,80 L 200,80 z " style="fill-opacity:0.5;fill:rgb(10,220,0);stroke:rgb(0,120,0);stroke-width:2"/></g>
+<g fill-rule="evenodd"><path d="M 111.429,111.429 L 111.429,120 L 57.1429,120 L 57.1429,111.429 L 111.429,111.429 z " style="fill-opacity:0.5;fill:rgb(220,20,0);stroke:rgb(50,110,0);stroke-width:1"/></g>
+<g fill-rule="evenodd"><path d="M 87.1429,97.1429 L 87.1429,105.714 L 0,105.714 L 0,97.1429 L 87.1429,97.1429 z " style="fill-opacity:0.5;fill:rgb(220,20,0);stroke:rgb(50,110,0);stroke-width:1"/></g>
+<g fill-rule="evenodd"><path d="M 57.1429,82.8571 L 57.1429,91.4286 L 28.5714,91.4286 L 28.5714,82.8571 L 57.1429,82.8571 z " style="fill-opacity:0.5;fill:rgb(220,20,0);stroke:rgb(50,110,0);stroke-width:1"/></g>
+<g fill-rule="evenodd"><path d="M 200,97.1429 L 200,105.714 L 100,105.714 L 100,97.1429 L 200,97.1429 z " style="fill-opacity:0.5;fill:rgb(220,20,0);stroke:rgb(50,110,0);stroke-width:1"/></g>
+<g fill-rule="evenodd"><path d="M 157.143,94.2857 L 157.143,108.571 L 148.571,108.571 L 148.571,94.2857 L 157.143,94.2857 z " style="fill-opacity:0.5;fill:rgb(220,20,0);stroke:rgb(50,110,0);stroke-width:1"/></g>
+<g fill-rule="evenodd"><path d="M 200,80 L 200,88.5714 L 122.857,88.5714 L 122.857,80 L 200,80 z " style="fill-opacity:0.5;fill:rgb(220,20,0);stroke:rgb(50,110,0);stroke-width:1"/></g>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="57.1429" y="115">Length of end > 0.6um!</text>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="0" y="100.714">Length of end > 0.6um!</text>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="28.5714" y="86.4286">Length of end > 0.6um!</text>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="100" y="100.714">Length of end > 0.6um!</text>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="148.571" y="103.571">Length of end > 0.6um!</text>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="122.857" y="83.5714">Length of end > 0.6um!</text>
 </svg>

@@ -18,32 +18,63 @@ typedef boost::geometry::model::box<point> box;
 typedef read_spec::spec::layer layer;
 using read_spec::func::readSpecFile;
 using read_spec::spec::vec_layers;
-// using read_spec::spec::layer::texts;
+// using read_spec::spec::vec_warnings;
 
-void getMultiSvgs(multi_polygon);
+void checkMinLength(layer::rect &);
 tuple<multi_polygon, box> getMaxUnion(vector<layer>);
 void setPins(vector<layer> vec_layers, multi_polygon mp, box box);
+
 typedef boost::polygon::rectangle_data<int> rect;
+
+class waring
+{
+public:
+  string str_warning;
+  point points;
+  waring(string w, point p)
+  {
+    str_warning = w;
+    points = p;
+  }
+};
+vector<waring> vec_warnings;
 
 int main()
 {
   readSpecFile(vec_layers);
   // auto [mp, box] = getMaxUnion(vec_layers);
   // setPins(vec_layers, mp, box); // rects  == pins
+
   ofstream box_svg("box.svg");
   boost::geometry::svg_mapper<point> box_mapper(box_svg, 200, 200);
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
+    checkMinLength(vec_layers[0].vec_rects[i]);
     box_mapper.add(vec_layers[0].vec_rects[i].poly_rect);
   }
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
-    box_mapper.map(vec_layers[0].vec_rects[i].poly_rect, "fill-opacity:0.5;fill:rgb(10,220,0);stroke:rgb(0,120,0);stroke-width:2");
+    string color = "fill-opacity:0.5;fill:" + vec_layers[0].vec_rects[i].color_fill + ";stroke:" + vec_layers[0].vec_rects[i].color_stroke + ";stroke-width:1";
+    box_mapper.map(vec_layers[0].vec_rects[i].poly_rect, color);
   }
-  cout << vec_layers[0].vec_rects[0].str_rect << endl;
-  cout << vec_layers[0].vec_rects[1].str_rect << endl;
+  for (int i = 0; i < vec_warnings.size(); i++)
+  {
+    box_mapper.text(vec_warnings[i].points, vec_warnings[i].str_warning, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;", 0, -5, 0);
+  }
+  // cout << vec_layers[0].vec_rects[0].str_rect << endl;
+  // cout << vec_layers[0].vec_rects[1].str_rect << endl;
 
   return 0;
+}
+
+void checkMinLength(layer::rect &rect)
+{
+  if (rect.w < 0.6)
+  {
+    rect.color_fill = "rgb(220,20,0)";
+    waring w("Length of end > 0.6um!", point(rect.lx, rect.ly));
+    vec_warnings.push_back(w);
+  }
 }
 
 // tuple<multi_polygon, box> getMaxUnion(const vector<layer> vec_layers)
