@@ -6,7 +6,6 @@
 #include <deque>
 
 #include <boost/geometry.hpp>
-#include <boost/geometry/geometries/box.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 #include <boost/geometry/geometries/adapted/boost_polygon.hpp>
@@ -16,8 +15,6 @@ namespace bg = boost::geometry;
 
 typedef boost::geometry::model::d2::point_xy<double> point;
 typedef boost::geometry::model::polygon<point> polygon;
-typedef boost::geometry::model::multi_polygon<polygon> multi_polygon;
-typedef boost::geometry::model::box<point> box;
 typedef read_spec::spec::layer layer;
 using read_spec::func::readSpecFile;
 using read_spec::spec::vec_layers;
@@ -25,9 +22,6 @@ using read_spec::spec::vec_layers;
 void checkMinLength(layer::rect &);
 void checkOverlap();
 void checkEOL();
-tuple<multi_polygon, box> getMaxUnion(vector<layer>);
-void setPins(vector<layer> vec_layers, multi_polygon mp, box box);
-
 typedef boost::polygon::rectangle_data<int> rect;
 
 class waring
@@ -46,27 +40,27 @@ vector<waring> vec_warnings;
 int main()
 {
   readSpecFile(vec_layers);
-  ofstream box_svg("box.svg");
-  boost::geometry::svg_mapper<point> box_mapper(box_svg, 200, 200);
+  ofstream output_svg("output.svg");
+  boost::geometry::svg_mapper<point> output_mapper(output_svg, 200, 200);
   checkOverlap();
   checkEOL();
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
     checkMinLength(vec_layers[0].vec_rects[i]);
-    box_mapper.add(vec_layers[0].vec_rects[i].poly_rect);
-    box_mapper.add(vec_layers[0].vec_rects[i].poly_end1);
-    box_mapper.add(vec_layers[0].vec_rects[i].poly_end2);
+    output_mapper.add(vec_layers[0].vec_rects[i].poly_rect);
+    output_mapper.add(vec_layers[0].vec_rects[i].poly_end1);
+    output_mapper.add(vec_layers[0].vec_rects[i].poly_end2);
   }
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
     string color = "fill-opacity:0.9;fill:" + vec_layers[0].vec_rects[i].color_fill;
-    box_mapper.map(vec_layers[0].vec_rects[i].poly_end1, "fill:" + vec_layers[0].vec_rects[i].color_end1);
-    box_mapper.map(vec_layers[0].vec_rects[i].poly_end2, "fill:" + vec_layers[0].vec_rects[i].color_end2);
-    box_mapper.map(vec_layers[0].vec_rects[i].poly_rect, color);
+    output_mapper.map(vec_layers[0].vec_rects[i].poly_end1, "fill:" + vec_layers[0].vec_rects[i].color_end1);
+    output_mapper.map(vec_layers[0].vec_rects[i].poly_end2, "fill:" + vec_layers[0].vec_rects[i].color_end2);
+    output_mapper.map(vec_layers[0].vec_rects[i].poly_rect, color);
   }
   for (int i = 0; i < vec_warnings.size(); i++)
   {
-    box_mapper.text(vec_warnings[i].points, vec_warnings[i].str_warning, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;", 10, -2, 0);
+    output_mapper.text(vec_warnings[i].points, vec_warnings[i].str_warning, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;", 10, -2, 0);
   }
   return 0;
 }
