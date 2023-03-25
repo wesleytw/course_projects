@@ -61,13 +61,12 @@ int main()
   {
     string color = "fill-opacity:0.9;fill:" + vec_layers[0].vec_rects[i].color_fill;
     box_mapper.map(vec_layers[0].vec_rects[i].poly_end1, "fill:" + vec_layers[0].vec_rects[i].color_end1);
-    cout <<vec_layers[0].vec_rects[i].color_end1<<"vec_layers[0].vec_rects[i].color_end1";
     box_mapper.map(vec_layers[0].vec_rects[i].poly_end2, "fill:" + vec_layers[0].vec_rects[i].color_end2);
     box_mapper.map(vec_layers[0].vec_rects[i].poly_rect, color);
   }
   for (int i = 0; i < vec_warnings.size(); i++)
   {
-    box_mapper.text(vec_warnings[i].points, vec_warnings[i].str_warning, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;", 0, -5, 0);
+    box_mapper.text(vec_warnings[i].points, vec_warnings[i].str_warning, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;", 10, -2, 0);
   }
   return 0;
 }
@@ -97,6 +96,8 @@ void checkOverlap()
       {
         rect_now.color_fill = "rgb(220,0,0)";
         rect_next.color_fill = "rgb(220,0,0)";
+        waring w("Overlaping lines!", point(rect_now.lx, rect_now.ly));
+        vec_warnings.push_back(w);
       }
     }
   }
@@ -117,14 +118,18 @@ void checkEOL()
       {
         rect_now.color_fill = "rgb(220,0,0)";
         rect_next.color_fill = "rgb(220,0,0)";
-        rect_now.color_end1 = "rgb(220,20,0);fill-opacity:0.5;";
+        rect_now.color_end1 = "rgb(220,20,0);fill-opacity:0.4;stroke:rgb(220,60,60);stroke-width:0.5";
+        waring w("Overlaping EOL!", point(rect_now.lx, rect_now.ly));
+        vec_warnings.push_back(w);
       }
       boost::geometry::intersection(rect_now.poly_end2, rect_next.poly_rect, intersections2);
       if (intersections2.size() != 0)
       {
         rect_now.color_fill = "rgb(220,0,0)";
         rect_next.color_fill = "rgb(220,0,0)";
-        rect_now.color_end2 = "rgb(220,20,0);fill-opacity:0.5;";
+        rect_now.color_end2 = "rgb(220,20,0);fill-opacity:0.4;stroke:rgb(220,60,60);stroke-width:0.5";
+        waring w("Overlaping EOL!", point(rect_now.lx, rect_now.ly));
+        vec_warnings.push_back(w);
       }
     }
   }
