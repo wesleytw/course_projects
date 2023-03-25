@@ -25,6 +25,7 @@ using read_spec::spec::vec_layers;
 
 void checkMinLength(layer::rect &);
 void checkOverlap();
+void checkEOL();
 tuple<multi_polygon, box> getMaxUnion(vector<layer>);
 void setPins(vector<layer> vec_layers, multi_polygon mp, box box);
 
@@ -51,7 +52,8 @@ int main()
 
   ofstream box_svg("box.svg");
   boost::geometry::svg_mapper<point> box_mapper(box_svg, 200, 200);
-  checkOverlap();
+  // checkOverlap();
+  checkEOL();
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
     checkMinLength(vec_layers[0].vec_rects[i]);
@@ -61,10 +63,11 @@ int main()
   }
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
-    string color = "fill-opacity:0.5;fill:" + vec_layers[0].vec_rects[i].color_fill;
+    string color = "fill-opacity:0.9;fill:" + vec_layers[0].vec_rects[i].color_fill;
+    box_mapper.map(vec_layers[0].vec_rects[i].poly_end1, "fill:" + vec_layers[0].vec_rects[i].color_end1);
+    cout <<vec_layers[0].vec_rects[i].color_end1<<"vec_layers[0].vec_rects[i].color_end1";
+    box_mapper.map(vec_layers[0].vec_rects[i].poly_end2, "fill:" + vec_layers[0].vec_rects[i].color_end2);
     box_mapper.map(vec_layers[0].vec_rects[i].poly_rect, color);
-    box_mapper.map(vec_layers[0].vec_rects[i].poly_end1, "fill-opacity:0.5;fill:rgb(220,220,220)");
-    box_mapper.map(vec_layers[0].vec_rects[i].poly_end2, "fill-opacity:0.5;fill:rgb(220,220,220)");
   }
   for (int i = 0; i < vec_warnings.size(); i++)
   {
@@ -97,11 +100,41 @@ void checkOverlap()
       layer::rect &rect_next = vec_layers[0].vec_rects[j];
       std::deque<polygon> intersections;
       boost::geometry::intersection(rect_now.poly_rect, rect_next.poly_rect, intersections);
-      std::cout << "green && blue:" << intersections.size() << std::endl;
+      // std::cout << "green && blue:" << intersections.size() << std::endl;
       if (intersections.size() != 0)
       {
         rect_now.color_fill = "rgb(220,0,0)";
         rect_next.color_fill = "rgb(220,0,0)";
+      }
+    }
+  }
+}
+
+void checkEOL()
+{
+  int vec_size = vec_layers[0].vec_rects.size();
+  for (int i = 0; i < vec_size; i++)
+  {
+    layer::rect &rect_now = vec_layers[0].vec_rects[i];
+    for (int j = i + 1; j < vec_size; j++)
+    {
+      layer::rect &rect_next = vec_layers[0].vec_rects[j];
+      std::deque<polygon> intersections1, intersections2;
+      boost::geometry::intersection(rect_now.poly_end1, rect_next.poly_rect, intersections1);
+      std::cout << "green && blue:" << intersections1.size() << std::endl;
+      if (intersections1.size() != 0)
+      {
+        rect_now.color_fill = "rgb(220,0,0)";
+        rect_next.color_fill = "rgb(220,0,0)";
+        rect_now.color_end1 = "rgb(220,20,0);fill-opacity:0.5;";
+      }
+      boost::geometry::intersection(rect_now.poly_end2, rect_next.poly_rect, intersections2);
+      // std::cout << "green && blue:" << intersections.size() << std::endl;
+      if (intersections2.size() != 0)
+      {
+        rect_now.color_fill = "rgb(220,0,0)";
+        rect_next.color_fill = "rgb(220,0,0)";
+        rect_now.color_end2 = "rgb(220,20,0);fill-opacity:0.5;";
       }
     }
   }

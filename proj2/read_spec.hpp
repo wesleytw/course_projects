@@ -27,7 +27,7 @@ namespace read_spec
       class rect
       {
       public:
-        string str_rect, color_fill, color_stroke, color_end1, color_end2;
+        string str_rect, color_fill, color_stroke, color_end1 = "rgb(0,90,0);fill-opacity:0;", color_end2 = "rgb(0,90,0);fill-opacity:0;";
         double hx, hy, lx, ly, x, y, w, l;
         boost::geometry::model::polygon<point> poly_rect, poly_end1, poly_end2;
 
