@@ -21,7 +21,6 @@ typedef boost::geometry::model::box<point> box;
 typedef read_spec::spec::layer layer;
 using read_spec::func::readSpecFile;
 using read_spec::spec::vec_layers;
-// using read_spec::spec::vec_warnings;
 
 void checkMinLength(layer::rect &);
 void checkOverlap();
@@ -47,12 +46,9 @@ vector<waring> vec_warnings;
 int main()
 {
   readSpecFile(vec_layers);
-  // auto [mp, box] = getMaxUnion(vec_layers);
-  // setPins(vec_layers, mp, box); // rects  == pins
-
   ofstream box_svg("box.svg");
   boost::geometry::svg_mapper<point> box_mapper(box_svg, 200, 200);
-  // checkOverlap();
+  checkOverlap();
   checkEOL();
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
@@ -73,9 +69,6 @@ int main()
   {
     box_mapper.text(vec_warnings[i].points, vec_warnings[i].str_warning, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;", 0, -5, 0);
   }
-  // cout << vec_layers[0].vec_rects[0].str_rect << endl;
-  // cout << vec_layers[0].vec_rects[1].str_rect << endl;
-
   return 0;
 }
 
@@ -100,7 +93,6 @@ void checkOverlap()
       layer::rect &rect_next = vec_layers[0].vec_rects[j];
       std::deque<polygon> intersections;
       boost::geometry::intersection(rect_now.poly_rect, rect_next.poly_rect, intersections);
-      // std::cout << "green && blue:" << intersections.size() << std::endl;
       if (intersections.size() != 0)
       {
         rect_now.color_fill = "rgb(220,0,0)";
@@ -121,7 +113,6 @@ void checkEOL()
       layer::rect &rect_next = vec_layers[0].vec_rects[j];
       std::deque<polygon> intersections1, intersections2;
       boost::geometry::intersection(rect_now.poly_end1, rect_next.poly_rect, intersections1);
-      std::cout << "green && blue:" << intersections1.size() << std::endl;
       if (intersections1.size() != 0)
       {
         rect_now.color_fill = "rgb(220,0,0)";
@@ -129,7 +120,6 @@ void checkEOL()
         rect_now.color_end1 = "rgb(220,20,0);fill-opacity:0.5;";
       }
       boost::geometry::intersection(rect_now.poly_end2, rect_next.poly_rect, intersections2);
-      // std::cout << "green && blue:" << intersections.size() << std::endl;
       if (intersections2.size() != 0)
       {
         rect_now.color_fill = "rgb(220,0,0)";
@@ -139,99 +129,3 @@ void checkEOL()
     }
   }
 }
-
-// tuple<multi_polygon, box> getMaxUnion(const vector<layer> vec_layers)
-// {
-//   string multi_blocks;
-//   for (int i = 0; i < vec_layers[0].polygons.size(); i++)
-//   {
-//     multi_blocks = multi_blocks + "((" + vec_layers[0].polygons[i] + ")),";
-//   }
-//   for (int i = 0; i < vec_layers[0].rectangles.size(); i++)
-//   {
-//     multi_blocks = multi_blocks + "((" + vec_layers[0].rectangles[i] + ")),";
-//   }
-//   multi_blocks = "MULTIPOLYGON(" + multi_blocks + ")";
-
-//   boost::geometry::model::multi_polygon<polygon> mp;
-//   boost::geometry::read_wkt(multi_blocks, mp);
-//   getMultiSvgs(mp);
-
-//   boost::geometry::model::box<point> box;
-//   boost::geometry::envelope(mp, box);
-//   std::ofstream box_svg("box.svg");
-//   boost::geometry::svg_mapper<point> box_mapper(box_svg, 100, 100);
-//   box_mapper.add(box);
-//   box_mapper.map(box, "fill-opacity:0.8;fill:rgb(0,0,220);stroke:rgb(0,0,230);stroke-width:2");
-//   box_mapper.add(mp);
-//   box_mapper.map(mp, "fill-opacity:0.5;fill:rgb(160,0,0);stroke:rgb(200,20,0);stroke-width:2");
-//   return {mp, box};
-// }
-
-// void getMultiSvgs(multi_polygon mp)
-// {
-//   std::ofstream mp_svg("mp.svg");
-//   boost::geometry::svg_mapper<point> mp_mapper(mp_svg, 100, 100);
-//   mp_mapper.add(mp);
-//   mp_mapper.map(mp, "fill-opacity:0.5;fill:rgb(160,0,0);stroke:rgb(200,20,0);stroke-width:2");
-// }
-// boost::geometry::strategy::buffer::join_miter join_strategy;
-// boost::geometry::strategy::buffer::distance_symmetric<double> distance_strategy(0.5);
-// boost::geometry::strategy::buffer::end_flat end_strategy;
-// boost::geometry::strategy::buffer::side_straight side_strategy;
-// boost::geometry::strategy::buffer::point_circle point_strategy;
-// boost::geometry::model::multi_polygon<polygon> lg_pins;
-// void setPins(vector<layer> vec_layers, multi_polygon mp, box box)
-// {
-//   for (int i = 0; i < vec_layers[0].polygons.size(); i++)
-//   {
-//     boost::geometry::model::polygon<point> po;
-//     boost::geometry::read_wkt("POLYGON((" + vec_layers[0].polygons[i] + "))", po);
-//     for (int j = 0; j < vec_layers[0].texts.size(); j++)
-//     {
-//       if (boost::geometry::within(point(vec_layers[0].texts[j].p1, vec_layers[0].texts[j].p2), po))
-//       {
-//         vec_layers[0].pins.push_back(vec_layers[0].polygons[i]);
-//       }
-//     }
-//   }
-//   for (int i = 0; i < vec_layers[0].rectangles.size(); i++)
-//   {
-//     boost::geometry::model::polygon<point> po;
-//     boost::geometry::read_wkt("POLYGON((" + vec_layers[0].rectangles[i] + "))", po);
-//     for (int j = 0; j < vec_layers[0].texts.size(); j++)
-//     {
-//       if (boost::geometry::within(point(vec_layers[0].texts[j].p1, vec_layers[0].texts[j].p2), po))
-//       {
-//         vec_layers[0].pins.push_back(vec_layers[0].rectangles[i]);
-//       }
-//     }
-//   }
-
-//   string multi_pins;
-//   for (int i = 0; i < vec_layers[0].pins.size(); i++)
-//   {
-//     multi_pins = multi_pins + "((" + vec_layers[0].pins[i] + ")),";
-//   }
-//   multi_pins = "MULTIPOLYGON(" + multi_pins + ")";
-//   boost::geometry::model::multi_polygon<polygon> pins;
-//   boost::geometry::read_wkt(multi_pins, pins);
-
-//   boost::geometry::buffer(pins, lg_pins,
-//                           distance_strategy, side_strategy,
-//                           join_strategy, end_strategy, point_strategy);
-//   boost::geometry::model::multi_polygon<polygon> no_pins;
-//   boost::geometry::difference(box, lg_pins, no_pins);
-//   std::ofstream with_pins_svg("with_pins.svg");
-//   boost::geometry::svg_mapper<point> with_pins_mapper(with_pins_svg, 100, 100);
-//   with_pins_mapper.add(no_pins);
-//   with_pins_mapper.map(no_pins, "fill-opacity:0.8;fill:rgb(0,0,220);stroke:rgb(0,0,230);stroke-width:0.5");
-//   with_pins_mapper.add(mp);
-//   with_pins_mapper.map(mp, "fill-opacity:0.55;fill:rgb(160,0,0);");
-//   with_pins_mapper.add(pins);
-//   with_pins_mapper.map(pins, "fill-opacity:1;fill:rgb(0,110,0);");
-//   for (int i = 0; i < vec_layers[0].texts.size(); i++)
-//   {
-//     with_pins_mapper.text(point(vec_layers[0].texts[i].p1, vec_layers[0].texts[i].p2), vec_layers[0].texts[i].name, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:6px;", 0, 0);
-//   }
-// }

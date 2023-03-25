@@ -14,12 +14,10 @@ namespace read_spec
 {
   namespace spec
   {
-    // vector<string> vec_warnings;
     class layer
     {
     public:
       string layer_name;
-      // int number_of_layers, number_of_polygons, number_of_rectngles, number_of_texts;
       layer(string layer_name)
       {
         layer_name = layer_name;
@@ -34,7 +32,6 @@ namespace read_spec
         rect(string x1, string y1, string x2, string y2)
         {
           str_rect = (x2 + " " + y2 + ", ") + (x2 + " " + y1 + " ") + (x1 + " " + y1 + " ") + (x1 + " " + y2 + ", ") + (x2 + " " + y2);
-          // cout << str_rect;
           boost::geometry::read_wkt("POLYGON((" + str_rect + "))", poly_rect);
           lx = stod(x1);
           ly = stod(y1);
@@ -46,11 +43,6 @@ namespace read_spec
           {
             l = x;
             w = y;
-            // po
-            // point p = point(3, 3);
-            //
-            //   multi_polys = multi_polys + "((" + arr[i] + ")),";
-            // multi_polys = "MULTIPOLYGON(" + multi_polys + ")";
             string end_left = (to_string(lx - 1) + " " + to_string(ly - 0.4)) + "," + (to_string(lx - 1) + " " + to_string(hy + 0.4)) + "," + (to_string(lx + 0.7) + " " + to_string(hy + 0.4)) + "," + (to_string(lx + 0.7) + " " + to_string(ly - 0.4)) + "," + (to_string(lx - 1) + " " + to_string(ly - 0.4));
             string end_right = (to_string(hx - 0.7) + " " + to_string(ly - 0.4)) + "," + (to_string(hx - 0.7) + " " + to_string(hy + 0.4)) + "," + (to_string(hx + 1) + " " + to_string(hy + 0.4)) + "," + (to_string(hx + 1) + " " + to_string(ly - 0.4)) + "," + (to_string(hx - 0.7) + " " + to_string(ly - 0.4));
             boost::geometry::read_wkt("POLYGON((" + end_left + "))", poly_end1);
