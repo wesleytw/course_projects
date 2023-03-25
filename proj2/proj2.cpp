@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream> // svg
 #include <vector>
+#include <deque>
+
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/box.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -10,6 +12,7 @@
 #include <boost/geometry/geometries/adapted/boost_polygon.hpp>
 #include <boost/foreach.hpp>
 using namespace std;
+namespace bg = boost::geometry;
 
 typedef boost::geometry::model::d2::point_xy<double> point;
 typedef boost::geometry::model::polygon<point> polygon;
@@ -21,6 +24,7 @@ using read_spec::spec::vec_layers;
 // using read_spec::spec::vec_warnings;
 
 void checkMinLength(layer::rect &);
+void checkOverlap();
 tuple<multi_polygon, box> getMaxUnion(vector<layer>);
 void setPins(vector<layer> vec_layers, multi_polygon mp, box box);
 
@@ -47,15 +51,20 @@ int main()
 
   ofstream box_svg("box.svg");
   boost::geometry::svg_mapper<point> box_mapper(box_svg, 200, 200);
+  checkOverlap();
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
     checkMinLength(vec_layers[0].vec_rects[i]);
     box_mapper.add(vec_layers[0].vec_rects[i].poly_rect);
+    box_mapper.add(vec_layers[0].vec_rects[i].poly_end1);
+    box_mapper.add(vec_layers[0].vec_rects[i].poly_end2);
   }
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
-    string color = "fill-opacity:0.5;fill:" + vec_layers[0].vec_rects[i].color_fill + ";stroke:" + vec_layers[0].vec_rects[i].color_stroke + ";stroke-width:1";
+    string color = "fill-opacity:0.5;fill:" + vec_layers[0].vec_rects[i].color_fill;
     box_mapper.map(vec_layers[0].vec_rects[i].poly_rect, color);
+    box_mapper.map(vec_layers[0].vec_rects[i].poly_end1, "fill-opacity:0.5;fill:rgb(220,220,220)");
+    box_mapper.map(vec_layers[0].vec_rects[i].poly_end2, "fill-opacity:0.5;fill:rgb(220,220,220)");
   }
   for (int i = 0; i < vec_warnings.size(); i++)
   {
@@ -69,11 +78,32 @@ int main()
 
 void checkMinLength(layer::rect &rect)
 {
-  if (rect.w < 0.6)
+  if (rect.w > 0.60001)
   {
     rect.color_fill = "rgb(220,20,0)";
     waring w("Length of end > 0.6um!", point(rect.lx, rect.ly));
     vec_warnings.push_back(w);
+  }
+}
+
+void checkOverlap()
+{
+  int vec_size = vec_layers[0].vec_rects.size();
+  for (int i = 0; i < vec_size; i++)
+  {
+    layer::rect &rect_now = vec_layers[0].vec_rects[i];
+    for (int j = i + 1; j < vec_size; j++)
+    {
+      layer::rect &rect_next = vec_layers[0].vec_rects[j];
+      std::deque<polygon> intersections;
+      boost::geometry::intersection(rect_now.poly_rect, rect_next.poly_rect, intersections);
+      std::cout << "green && blue:" << intersections.size() << std::endl;
+      if (intersections.size() != 0)
+      {
+        rect_now.color_fill = "rgb(220,0,0)";
+        rect_next.color_fill = "rgb(220,0,0)";
+      }
+    }
   }
 }
 
