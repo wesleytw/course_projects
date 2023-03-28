@@ -47,16 +47,16 @@ This program reads the spec from spec.txt and saves the shapes as OBJECTS.
 
 ### proj2.cpp  
 #### 1. Check min length. If length < 0.6um, show the warning text and turn the color of line into red. Test using 0.4um as min length. ```/test_demo/min_length.svg```
-![min_length](https://raw.githubusercontent.com/wesleytw/eda_course_projects/d2d609181d56a2b28765cac07f5dbe287a4958b7/proj2/group3_proj2/test_demo/min_length.svg)
+![min_length](https://raw.githubusercontent.com/wesleytw/eda_course_projects/master/proj2/group3_proj2/test_demo/min_length.svg)
 
 #### 2. Check overlappings of line. If one line overlap another line, turn both lines' colors into red and show the warning text. 
-![min_length](https://raw.githubusercontent.com/wesleytw/eda_course_projects/d2d609181d56a2b28765cac07f5dbe287a4958b7/proj2/group3_proj2/test_demo/line_overlap.svg)
+![min_length](https://raw.githubusercontent.com/wesleytw/eda_course_projects/master/proj2/group3_proj2/test_demo/line_overlap.svg)
 
 #### 3. EOL checking. Define the EOL area of each line. If the EOL area overlap any line, turn the line's color into red and show the warning text.  
-![eol](https://raw.githubusercontent.com/wesleytw/eda_course_projects/d2d609181d56a2b28765cac07f5dbe287a4958b7/proj2/group3_proj2/test_demo/eol.svg)
+![eol](https://raw.githubusercontent.com/wesleytw/eda_course_projects/master/proj2/group3_proj2/test_demo/eol.svg)
 
 #### 4. Check all the rules mentioned above.
-![output](https://raw.githubusercontent.com/wesleytw/eda_course_projects/d2d609181d56a2b28765cac07f5dbe287a4958b7/proj2/group3_proj2/output.svg)
+![output](https://raw.githubusercontent.com/wesleytw/eda_course_projects/master/proj2/group3_proj2/output.svg)
 
 
 
