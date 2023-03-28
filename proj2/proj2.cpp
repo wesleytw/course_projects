@@ -128,3 +128,8 @@ void checkEOL()
     }
   }
 }
+
+
+/*
+cd "/Users/wesley/Documents/清大/四下/eda/course_projects/proj2/" && g++ proj2.cpp -o proj2.out && "/Users/wesley/Documents/清大/四下/eda/course_projects/proj2/"proj2.out
+*/
