@@ -21,8 +21,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 <g fill-rule="evenodd"><path d="M 150,95 L 150,107.5 L 142.5,107.5 L 142.5,95 L 150,95 z " style="fill-opacity:0.9;fill:rgb(220,0,0)"/></g>
 <g fill-rule="evenodd"><path d="M 107.5,95 L 107.5,77.5 L 128.75,77.5 L 128.75,95 L 107.5,95 z " style="fill:rgb(0,90,0);fill-opacity:0;"/></g>
 <g fill-rule="evenodd"><path d="M 178.75,95 L 178.75,77.5 L 200,77.5 L 200,95 L 178.75,95 z " style="fill:rgb(0,90,0);fill-opacity:0;"/></g>
-<g fill-rule="evenodd"><path d="M 187.5,82.5 L 187.5,90 L 120,90 L 120,82.5 L 187.5,82.5 z " style="fill-opacity:0.9;fill:rgb(220,0,0)"/></g>
-<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="110" y="103">Overlaping lines!</text>
-<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="22.5" y="103">Overlaping EOL!</text>
-<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="152.5" y="105.5">Overlaping EOL!</text>
+<g fill-rule="evenodd"><path d="M 187.5,82.5 L 187.5,90 L 120,90 L 120,82.5 L 187.5,82.5 z " style="fill-opacity:0.9;fill:rgb(10,220,0)"/></g>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="22.5" y="103">EOL violation!</text>
+<text style="fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;" x="152.5" y="105.5">EOL violation!</text>
 </svg>
