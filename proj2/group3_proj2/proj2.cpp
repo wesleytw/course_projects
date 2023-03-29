@@ -20,7 +20,6 @@ typedef read_spec::spec::layer layer;
 using read_spec::func::readSpecFile;
 using read_spec::spec::vec_layers;
 
-void checkMinLength(layer::rect &);
 void checkOverlap();
 void checkEOL();
 typedef boost::polygon::rectangle_data<int> rect;
@@ -47,7 +46,6 @@ int main()
   checkEOL();
   for (int i = 0; i < vec_layers[0].vec_rects.size(); i++)
   {
-    checkMinLength(vec_layers[0].vec_rects[i]);
     output_mapper.add(vec_layers[0].vec_rects[i].poly_rect);
     output_mapper.add(vec_layers[0].vec_rects[i].poly_end1);
     output_mapper.add(vec_layers[0].vec_rects[i].poly_end2);
@@ -64,16 +62,6 @@ int main()
     output_mapper.text(vec_warnings[i].points, vec_warnings[i].str_warning, "fill-opacity:0.9;fill:rgb(220,220,220);font-size:4px;", 10, -2, 0);
   }
   return 0;
-}
-
-void checkMinLength(layer::rect &rect)
-{
-  if (rect.w > 0.600001)
-  {
-    rect.color_fill = "rgb(220,20,0)";
-    waring w("Length of end > 0.6um!", point(rect.lx, rect.ly));
-    vec_warnings.push_back(w);
-  }
 }
 
 void checkOverlap()
