@@ -1,0 +1,1553 @@
+
+[csr530303@ws28 object_viewer]$ ./object_viewer
+libGL error: No matching fbConfigs or visuals found
+libGL error: failed to load driver: swrast
+Fontconfig warning: ignoring UTF-8: not a valid region tag
+GDSII Version: 5
+Lib start
+Modified Time: 
+	2023-04-28 17:54:17
+Accessed Time: 
+	2023-04-28 21:36:31
+LibName: new
+UserUnits: 0.001000000
+DBUnits: 0.000000001
+Structure start
+Modified Time: 
+	2023-04-28 21:31:40
+Accessed Time: 
+	2023-04-28 21:36:31
+StrName: pierre
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(-20,1775)(-20,2775)(2760,2775)(2760,1775)(-20,1775)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(1125,-1025)(1125,3980)(1625,3980)(1625,-1025)(1125,-1025)
+Element end
+Boundry start
+Layer: 11
+Data Type: 0
+XY: 5
+(-875,760)(-875,3360)(9480,3360)(9480,760)(-875,760)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(695,2315)(695,2545)(925,2545)(925,2315)(695,2315)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(18190,10530)(18190,10760)(18420,10760)(18420,10530)(18190,10530)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(18220,9355)(18220,9585)(18450,9585)(18450,9355)(18220,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(1840,2315)(1840,2545)(2070,2545)(2070,2315)(1840,2315)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(570,1775)(570,3060)(1085,3060)(1085,1775)(570,1775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(1665,1775)(1665,4290)(2180,4290)(2180,1775)(1665,1775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(6425,1775)(6425,3980)(6940,3980)(6940,1775)(6425,1775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(7520,1775)(7520,3060)(8035,3060)(8035,1775)(7520,1775)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(6980,-1025)(6980,3980)(7480,3980)(7480,-1025)(6980,-1025)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(6550,2315)(6550,2545)(6780,2545)(6780,2315)(6550,2315)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(7695,2315)(7695,2545)(7925,2545)(7925,2315)(7695,2315)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(16185,-1410)(16185,10965)(16700,10965)(16700,-1410)(16185,-1410)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(18050,6775)(18050,10965)(18565,10965)(18565,6775)(18050,6775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(570,1775)(570,10090)(1085,10090)(1085,1775)(570,1775)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(5835,1775)(5835,2775)(8615,2775)(8615,1775)(5835,1775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(1665,6925)(1665,10090)(2180,10090)(2180,6925)(1665,6925)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(6425,4610)(6425,10090)(6940,10090)(6940,4610)(6425,4610)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(7520,2385)(7520,10090)(8035,10090)(8035,2385)(7520,2385)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(1125,8255)(1125,12430)(1625,12430)(1625,8255)(1125,8255)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(6980,8255)(6980,12430)(7480,12430)(7480,8255)(6980,8255)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(16345,10530)(16345,10760)(16575,10760)(16575,10530)(16345,10530)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(16345,9355)(16345,9585)(16575,9585)(16575,9355)(16345,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(1845,9655)(1845,9885)(2075,9885)(2075,9655)(1845,9655)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(705,9655)(705,9885)(935,9885)(935,9655)(705,9655)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(17050,8375)(17050,15105)(17550,15105)(17550,8375)(17050,8375)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(15550,8615)(15550,11615)(19050,11615)(19050,8615)(15550,8615)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(7700,9655)(7700,9885)(7930,9885)(7930,9655)(7700,9655)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(6560,9655)(6560,9885)(6790,9885)(6790,9655)(6560,9655)
+Element end
+Boundry start
+Layer: 11
+Data Type: 0
+XY: 5
+(-875,8790)(-875,11390)(9480,11390)(9480,8790)(-875,8790)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(-20,9090)(-20,10090)(2760,10090)(2760,9090)(-20,9090)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(5835,9090)(5835,10090)(8615,10090)(8615,9090)(5835,9090)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(7110,-565)(7110,-335)(7340,-335)(7340,-565)(7110,-565)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(1275,-565)(1275,-335)(1505,-335)(1505,-565)(1275,-565)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(1275,12000)(1275,12230)(1505,12230)(1505,12000)(1275,12000)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(7125,12000)(7125,12230)(7355,12230)(7355,12000)(7125,12000)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(-2005,11865)(-2005,12380)(11320,12380)(11320,11865)(-2005,11865)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(-2005,-710)(-2005,-195)(11320,-195)(11320,-710)(-2005,-710)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(-2005,-710)(-2005,12360)(-1490,12360)(-1490,-710)(-2005,-710)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(10895,-710)(10895,12380)(11320,12380)(11320,-710)(10895,-710)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(-11720,5775)(-11720,6360)(8150,6360)(8150,5775)(-11720,5775)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(655,5880)(655,6130)(905,6130)(905,5880)(655,5880)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(7605,5880)(7605,6130)(7855,6130)(7855,5880)(7605,5880)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(570,6920)(570,7505)(25395,7505)(25395,6920)(570,6920)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(-1995,4610)(-1995,5195)(25395,5195)(25395,4610)(-1995,4610)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(1770,7025)(1770,7275)(2020,7275)(2020,7025)(1770,7025)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(6525,4725)(6525,4975)(6775,4975)(6775,4725)(6525,4725)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(5410,3465)(5410,3980)(6940,3980)(6940,3465)(5410,3465)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(5405,3475)(5405,7505)(5920,7505)(5920,3475)(5405,3475)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(5505,7005)(5505,7255)(5755,7255)(5755,7005)(5505,7005)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(1665,3775)(1665,4290)(3195,4290)(3195,3775)(1665,3775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(2685,3775)(2685,5225)(3295,5225)(3295,3775)(2685,3775)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(2790,4730)(2790,4980)(3040,4980)(3040,4730)(2790,4730)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(15990,9105)(15990,11095)(16825,11095)(16825,9105)(15990,9105)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(17905,9105)(17905,11095)(18740,11095)(18740,9105)(17905,9105)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(15940,5775)(15940,6360)(46340,6360)(46340,5775)(15940,5775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(24645,-1385)(24645,10965)(25160,10965)(25160,-1385)(24645,-1385)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(22780,3260)(22780,10965)(23295,10965)(23295,3260)(22780,3260)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(24500,9105)(24500,11095)(25335,11095)(25335,9105)(24500,9105)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(22585,9105)(22585,11095)(23420,11095)(23420,9105)(22585,9105)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(23645,8375)(23645,13500)(24145,13500)(24145,8375)(23645,8375)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(24815,9355)(24815,9585)(25045,9585)(25045,9355)(24815,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(24785,10530)(24785,10760)(25015,10760)(25015,10530)(24785,10530)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(22940,9355)(22940,9585)(23170,9585)(23170,9355)(22940,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(22940,10530)(22940,10760)(23170,10760)(23170,10530)(22940,10530)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(22145,8615)(22145,11615)(25645,11615)(25645,8615)(22145,8615)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 7
+(22780,-1465)(22780,1800)(21710,1800)(21710,2315)(23295,2315)(23295,-1465)(22780,-1465)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 9
+(18075,-1410)(18075,1930)(19050,1930)(19050,5215)(19580,5215)(19580,1415)(18590,1415)(18590,-1410)(18075,-1410)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(17905,-1465)(17905,525)(18740,525)(18740,-1465)(17905,-1465)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(15990,-1465)(15990,525)(16825,525)(16825,-1465)(15990,-1465)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(19200,4725)(19200,4975)(19450,4975)(19450,4725)(19200,4725)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(22920,4725)(22920,4975)(23170,4975)(23170,4725)(22920,4725)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(24500,-1465)(24500,525)(25335,525)(25335,-1465)(24500,-1465)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(22585,-1465)(22585,525)(23420,525)(23420,-1465)(22585,-1465)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(17050,-3575)(17050,2340)(17550,2340)(17550,-3575)(17050,-3575)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(23645,-2930)(23645,2340)(24145,2340)(24145,-2930)(23645,-2930)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(18220,-1215)(18220,-985)(18450,-985)(18450,-1215)(18220,-1215)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(18190,-40)(18190,190)(18420,190)(18420,-40)(18190,-40)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(16345,-1215)(16345,-985)(16575,-985)(16575,-1215)(16345,-1215)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(16345,-40)(16345,190)(16575,190)(16575,-40)(16345,-40)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(24815,-1215)(24815,-985)(25045,-985)(25045,-1215)(24815,-1215)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(24785,-40)(24785,190)(25015,190)(25015,-40)(24785,-40)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(22940,-1215)(22940,-985)(23170,-985)(23170,-1215)(22940,-1215)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(22940,-40)(22940,190)(23170,190)(23170,-40)(22940,-40)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(15550,-1955)(15550,1045)(19050,1045)(19050,-1955)(15550,-1955)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(22145,-1955)(22145,1045)(25645,1045)(25645,-1955)(22145,-1955)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(21695,1800)(21695,7580)(22210,7580)(22210,1800)(21695,1800)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(24795,5920)(24795,6170)(25045,6170)(25045,5920)(24795,5920)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(16330,5965)(16330,6215)(16580,6215)(16580,5965)(16330,5965)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(21840,7060)(21840,7310)(22090,7310)(22090,7060)(21840,7060)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(18200,7060)(18200,7310)(18450,7310)(18450,7060)(18200,7060)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(14315,-3575)(14315,13655)(14740,13655)(14740,-3575)(14315,-3575)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(14110,-3535)(14110,-2950)(17935,-2950)(17935,-3535)(14110,-3535)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(23785,-2670)(23785,-2440)(24015,-2440)(24015,-2670)(23785,-2670)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(17200,-3350)(17200,-3120)(17430,-3120)(17430,-3350)(17200,-3350)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(14410,-3395)(14410,-3145)(14660,-3145)(14660,-3395)(14410,-3395)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(23505,-2900)(23505,-2315)(27330,-2315)(27330,-2900)(23505,-2900)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(26355,-3155)(26355,15175)(26780,15175)(26780,-3155)(26355,-3155)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(26475,-2670)(26475,-2420)(26725,-2420)(26725,-2670)(26475,-2670)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(17040,14495)(17040,15080)(26850,15080)(26850,14495)(17040,14495)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(17200,14630)(17200,14860)(17430,14860)(17430,14630)(17200,14630)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(14270,12860)(14270,13445)(24205,13445)(24205,12860)(14270,12860)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(14410,13005)(14410,13255)(14660,13255)(14660,13005)(14410,13005)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(23805,13005)(23805,13255)(24055,13255)(24055,13005)(23805,13005)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(26475,14630)(26475,14880)(26725,14880)(26725,14630)(26475,14630)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(17080,-3520)(17080,-3020)(17580,-3020)(17580,-3520)(17080,-3520)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(17195,-3380)(17195,-3130)(17445,-3130)(17445,-3380)(17195,-3380)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(23675,12915)(23675,13490)(24200,13490)(24200,12915)(23675,12915)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(23645,8200)(23645,13325)(24145,13325)(24145,8200)(23645,8200)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(35635,8585)(35635,12585)(39135,12585)(39135,8585)(35635,8585)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(23785,13010)(23785,13240)(24015,13240)(24015,13010)(23785,13010)
+Element end
+Boundry start
+Layer: 12
+Data Type: 0
+XY: 5
+(33285,-6840)(33285,16390)(49675,16390)(49675,-6840)(33285,-6840)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(17115,14465)(17115,15020)(17595,15020)(17595,14465)(17115,14465)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(17220,14640)(17220,14890)(17470,14890)(17470,14640)(17220,14640)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(23695,-2880)(23695,-2110)(24105,-2110)(24105,-2880)(23695,-2880)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(23785,-2685)(23785,-2435)(24035,-2435)(24035,-2685)(23785,-2685)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(37135,7950)(37135,15100)(37635,15100)(37635,7950)(37135,7950)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(36260,9355)(36260,9585)(36490,9585)(36490,9355)(36260,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(36260,10530)(36260,10760)(36490,10760)(36490,10530)(36260,10530)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(36260,11640)(36260,11870)(36490,11870)(36490,11640)(36260,11640)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(38240,9355)(38240,9585)(38470,9585)(38470,9355)(38240,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(38240,10530)(38240,10760)(38470,10760)(38470,10530)(38240,10530)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(38240,11640)(38240,11870)(38470,11870)(38470,11640)(38240,11640)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(37960,9095)(37960,12055)(38720,12055)(38720,9095)(37960,9095)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(35975,9095)(35975,12055)(36735,12055)(36735,9095)(35975,9095)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(29710,1855)(29710,7855)(31810,7855)(31810,1855)(29710,1855)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(45645,9095)(45645,12055)(46405,12055)(46405,9095)(45645,9095)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(43660,9095)(43660,12055)(44420,12055)(44420,9095)(43660,9095)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(44820,7950)(44820,15100)(45320,15100)(45320,7950)(44820,7950)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(43945,9355)(43945,9585)(44175,9585)(44175,9355)(43945,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(43945,10530)(43945,10760)(44175,10760)(44175,10530)(43945,10530)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(43945,11640)(43945,11870)(44175,11870)(44175,11640)(43945,11640)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(45925,9355)(45925,9585)(46155,9585)(46155,9355)(45925,9355)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(45925,10530)(45925,10760)(46155,10760)(46155,10530)(45925,10530)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(45925,11640)(45925,11870)(46155,11870)(46155,11640)(45925,11640)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(48815,-4490)(48815,14765)(49240,14765)(49240,-4490)(48815,-4490)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(43320,8585)(43320,12585)(46820,12585)(46820,8585)(43320,8585)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(37960,-2035)(37960,925)(38720,925)(38720,-2035)(37960,-2035)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(35975,-2035)(35975,925)(36735,925)(36735,-2035)(35975,-2035)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(45645,-2035)(45645,925)(46405,925)(46405,-2035)(45645,-2035)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(43660,-2035)(43660,925)(44420,925)(44420,-2035)(43660,-2035)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(37135,-4765)(37135,2700)(37635,2700)(37635,-4765)(37135,-4765)
+Element end
+Boundry start
+Layer: 41
+Data Type: 0
+XY: 5
+(44820,-4765)(44820,2700)(45320,2700)(45320,-4765)(44820,-4765)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(36260,-1775)(36260,-1545)(36490,-1545)(36490,-1775)(36260,-1775)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(36260,-600)(36260,-370)(36490,-370)(36490,-600)(36260,-600)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(36260,510)(36260,740)(36490,740)(36490,510)(36260,510)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(38240,-1775)(38240,-1545)(38470,-1545)(38470,-1775)(38240,-1775)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(38240,-600)(38240,-370)(38470,-370)(38470,-600)(38240,-600)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(38240,510)(38240,740)(38470,740)(38470,510)(38240,510)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(43945,-1775)(43945,-1545)(44175,-1545)(44175,-1775)(43945,-1775)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(43945,-600)(43945,-370)(44175,-370)(44175,-600)(43945,-600)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(43945,510)(43945,740)(44175,740)(44175,510)(43945,510)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(45925,-1775)(45925,-1545)(46155,-1545)(46155,-1775)(45925,-1775)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(45925,-600)(45925,-370)(46155,-370)(46155,-600)(45925,-600)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(45925,510)(45925,740)(46155,740)(46155,510)(45925,510)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(30600,4760)(30600,5010)(30850,5010)(30850,4760)(30600,4760)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(32830,-4490)(32830,-3975)(49240,-3975)(49240,-4490)(32830,-4490)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(35635,-2545)(35635,1455)(39135,1455)(39135,-2545)(35635,-2545)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(43320,-2545)(43320,1455)(46820,1455)(46820,-2545)(43320,-2545)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(32830,-4495)(32830,14765)(33345,14765)(33345,-4495)(32830,-4495)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(32830,14250)(32830,14765)(49240,14765)(49240,14250)(32830,14250)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(37270,14400)(37270,14630)(37500,14630)(37500,14400)(37270,14400)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(44960,14400)(44960,14630)(45190,14630)(45190,14400)(44960,14400)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(44960,-4340)(44960,-4110)(45190,-4110)(45190,-4340)(44960,-4340)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(37270,-4340)(37270,-4110)(37500,-4110)(37500,-4340)(37270,-4340)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(36085,5775)(36085,10965)(36600,10965)(36600,5775)(36085,5775)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(43800,5775)(43800,10965)(44315,10965)(44315,5775)(43800,5775)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(36220,5920)(36220,6170)(36470,6170)(36470,5920)(36220,5920)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(43905,5920)(43905,6170)(44155,6170)(44155,5920)(43905,5920)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(38095,-1410)(38095,6360)(38610,6360)(38610,-1410)(38095,-1410)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(45780,-1410)(45780,6360)(46295,6360)(46295,-1410)(45780,-1410)
+Element end
+Boundry start
+Layer: 48
+Data Type: 0
+XY: 5
+(30505,4610)(30505,5195)(48355,5195)(48355,4610)(30505,4610)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(38205,5925)(38205,6175)(38455,6175)(38455,5925)(38205,5925)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(45905,5935)(45905,6185)(46155,6185)(46155,5935)(45905,5935)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(-12450,3070)(-12450,9070)(-9950,9070)(-9950,3070)(-12450,3070)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(-12250,3070)(-12250,9070)(-10150,9070)(-10150,3070)(-12250,3070)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(-11365,3975)(-11365,4205)(-11135,4205)(-11135,3975)(-11365,3975)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(-11365,4955)(-11365,5185)(-11135,5185)(-11135,4955)(-11365,4955)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(-11365,5955)(-11365,6185)(-11135,6185)(-11135,5955)(-11365,5955)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(-11365,6905)(-11365,7135)(-11135,7135)(-11135,6905)(-11365,6905)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(-11365,8025)(-11365,8255)(-11135,8255)(-11135,8025)(-11365,8025)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(10990,4730)(10990,4980)(11240,4980)(11240,4730)(10990,4730)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(-11360,5975)(-11360,6225)(-11110,6225)(-11110,5975)(-11360,5975)
+Element end
+Text start
+Layer: 101
+	...unsupported yet
+Text Type: 0
+Font: 0
+Valign: 8
+Halign: 0
+Strans: 0
+XY: 1
+(48985,14395)
+	...unsupported yet
+String: vb
+Element end
+Text start
+Layer: 101
+	...unsupported yet
+Text Type: 0
+Font: 0
+Valign: 8
+Halign: 0
+Strans: 0
+XY: 1
+(26615,14395)
+	...unsupported yet
+String: vinp
+Element end
+Text start
+Layer: 101
+	...unsupported yet
+Text Type: 0
+Font: 0
+Valign: 8
+Halign: 0
+Strans: 0
+XY: 1
+(14525,-2685)
+	...unsupported yet
+String: vinn
+Element end
+Text start
+Layer: 102
+	...unsupported yet
+Text Type: 0
+Font: 0
+Valign: 8
+Halign: 0
+Strans: 0
+XY: 1
+(12100,7180)
+	...unsupported yet
+String: vout
+Element end
+Text start
+Layer: 101
+	...unsupported yet
+Text Type: 0
+Font: 0
+Valign: 8
+Halign: 0
+Strans: 0
+XY: 1
+(-10975,7180)
+	...unsupported yet
+String: vdd
+Element end
+Boundry start
+Layer: 12
+Data Type: 0
+XY: 5
+(-13830,745)(-13830,10520)(-8305,10520)(-8305,745)(-13830,745)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(43785,-2035)(43785,5200)(44300,5200)(44300,-2035)(43785,-2035)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(36095,-2035)(36095,5200)(36610,5200)(36610,-2035)(36095,-2035)
+Element end
+Text start
+Layer: 101
+	...unsupported yet
+Text Type: 0
+Font: 0
+Valign: 8
+Halign: 0
+Strans: 0
+XY: 1
+(30510,7360)
+	...unsupported yet
+String: gnd
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(30595,2760)(30595,2990)(30825,2990)(30825,2760)(30595,2760)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(30595,3740)(30595,3970)(30825,3970)(30825,3740)(30595,3740)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(30595,4740)(30595,4970)(30825,4970)(30825,4740)(30595,4740)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(30595,5690)(30595,5920)(30825,5920)(30825,5690)(30595,5690)
+Element end
+Boundry start
+Layer: 39
+Data Type: 0
+XY: 5
+(30595,6810)(30595,7040)(30825,7040)(30825,6810)(30595,6810)
+Element end
+Boundry start
+Layer: 11
+Data Type: 0
+XY: 5
+(29240,375)(29240,8865)(32410,8865)(32410,375)(29240,375)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(43905,4775)(43905,5025)(44155,5025)(44155,4775)(43905,4775)
+Element end
+Boundry start
+Layer: 1
+Data Type: 0
+XY: 5
+(29510,1855)(29510,7855)(32010,7855)(32010,1855)(29510,1855)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(36220,4765)(36220,5015)(36470,5015)(36470,4765)(36220,4765)
+Element end
+Boundry start
+Layer: 3
+Data Type: 0
+XY: 5
+(-14750,-3950)(-14750,14600)(12350,14600)(12350,-3950)(-14750,-3950)
+Element end
+Boundry start
+Layer: 12
+Data Type: 0
+XY: 5
+(12430,-6840)(12430,16390)(28820,16390)(28820,-6840)(12430,-6840)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(38095,7570)(38095,11990)(38610,11990)(38610,7570)(38095,7570)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(38105,7555)(38105,8065)(40330,8065)(40330,7555)(38105,7555)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(39810,4605)(39810,8075)(40320,8075)(40320,4605)(39810,4605)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(47490,4605)(47490,8075)(48000,8075)(48000,4605)(47490,4605)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(45785,7555)(45785,8065)(48010,8065)(48010,7555)(45785,7555)
+Element end
+Boundry start
+Layer: 46
+Data Type: 0
+XY: 5
+(45775,7570)(45775,11990)(46290,11990)(46290,7570)(45775,7570)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(39935,4765)(39935,5015)(40185,5015)(40185,4765)(39935,4765)
+Element end
+Boundry start
+Layer: 47
+Data Type: 0
+XY: 5
+(47605,4765)(47605,5015)(47855,5015)(47855,4765)(47605,4765)
+Element end
+Structure end
+Lib end
+****************************************************************************
+library: name=new unserUnits=0.001 dbUnit=1e-09
+cell: name=pierre
+  rectangle layer=1 xyNo=5 (-20,1775)(-20,2775)(2760,2775)(2760,1775)(-20,1775)
+  rectangle layer=41 xyNo=5 (1125,-1025)(1125,3980)(1625,3980)(1625,-1025)(1125,-1025)
+  rectangle layer=11 xyNo=5 (-875,760)(-875,3360)(9480,3360)(9480,760)(-875,760)
+  rectangle layer=39 xyNo=5 (695,2315)(695,2545)(925,2545)(925,2315)(695,2315)
+  rectangle layer=39 xyNo=5 (18190,10530)(18190,10760)(18420,10760)(18420,10530)(18190,10530)
+  rectangle layer=39 xyNo=5 (18220,9355)(18220,9585)(18450,9585)(18450,9355)(18220,9355)
+  rectangle layer=39 xyNo=5 (1840,2315)(1840,2545)(2070,2545)(2070,2315)(1840,2315)
+  rectangle layer=46 xyNo=5 (570,1775)(570,3060)(1085,3060)(1085,1775)(570,1775)
+  rectangle layer=46 xyNo=5 (1665,1775)(1665,4290)(2180,4290)(2180,1775)(1665,1775)
+  rectangle layer=46 xyNo=5 (6425,1775)(6425,3980)(6940,3980)(6940,1775)(6425,1775)
+  rectangle layer=46 xyNo=5 (7520,1775)(7520,3060)(8035,3060)(8035,1775)(7520,1775)
+  rectangle layer=41 xyNo=5 (6980,-1025)(6980,3980)(7480,3980)(7480,-1025)(6980,-1025)
+  rectangle layer=39 xyNo=5 (6550,2315)(6550,2545)(6780,2545)(6780,2315)(6550,2315)
+  rectangle layer=39 xyNo=5 (7695,2315)(7695,2545)(7925,2545)(7925,2315)(7695,2315)
+  rectangle layer=46 xyNo=5 (16185,-1410)(16185,10965)(16700,10965)(16700,-1410)(16185,-1410)
+  rectangle layer=46 xyNo=5 (18050,6775)(18050,10965)(18565,10965)(18565,6775)(18050,6775)
+  rectangle layer=46 xyNo=5 (570,1775)(570,10090)(1085,10090)(1085,1775)(570,1775)
+  rectangle layer=1 xyNo=5 (5835,1775)(5835,2775)(8615,2775)(8615,1775)(5835,1775)
+  rectangle layer=46 xyNo=5 (1665,6925)(1665,10090)(2180,10090)(2180,6925)(1665,6925)
+  rectangle layer=46 xyNo=5 (6425,4610)(6425,10090)(6940,10090)(6940,4610)(6425,4610)
+  rectangle layer=46 xyNo=5 (7520,2385)(7520,10090)(8035,10090)(8035,2385)(7520,2385)
+  rectangle layer=41 xyNo=5 (1125,8255)(1125,12430)(1625,12430)(1625,8255)(1125,8255)
+  rectangle layer=41 xyNo=5 (6980,8255)(6980,12430)(7480,12430)(7480,8255)(6980,8255)
+  rectangle layer=39 xyNo=5 (16345,10530)(16345,10760)(16575,10760)(16575,10530)(16345,10530)
+  rectangle layer=39 xyNo=5 (16345,9355)(16345,9585)(16575,9585)(16575,9355)(16345,9355)
+  rectangle layer=39 xyNo=5 (1845,9655)(1845,9885)(2075,9885)(2075,9655)(1845,9655)
+  rectangle layer=39 xyNo=5 (705,9655)(705,9885)(935,9885)(935,9655)(705,9655)
+  rectangle layer=41 xyNo=5 (17050,8375)(17050,15105)(17550,15105)(17550,8375)(17050,8375)
+  rectangle layer=1 xyNo=5 (15550,8615)(15550,11615)(19050,11615)(19050,8615)(15550,8615)
+  rectangle layer=39 xyNo=5 (7700,9655)(7700,9885)(7930,9885)(7930,9655)(7700,9655)
+  rectangle layer=39 xyNo=5 (6560,9655)(6560,9885)(6790,9885)(6790,9655)(6560,9655)
+  rectangle layer=11 xyNo=5 (-875,8790)(-875,11390)(9480,11390)(9480,8790)(-875,8790)
+  rectangle layer=1 xyNo=5 (-20,9090)(-20,10090)(2760,10090)(2760,9090)(-20,9090)
+  rectangle layer=1 xyNo=5 (5835,9090)(5835,10090)(8615,10090)(8615,9090)(5835,9090)
+  rectangle layer=39 xyNo=5 (7110,-565)(7110,-335)(7340,-335)(7340,-565)(7110,-565)
+  rectangle layer=39 xyNo=5 (1275,-565)(1275,-335)(1505,-335)(1505,-565)(1275,-565)
+  rectangle layer=39 xyNo=5 (1275,12000)(1275,12230)(1505,12230)(1505,12000)(1275,12000)
+  rectangle layer=39 xyNo=5 (7125,12000)(7125,12230)(7355,12230)(7355,12000)(7125,12000)
+  rectangle layer=46 xyNo=5 (-2005,11865)(-2005,12380)(11320,12380)(11320,11865)(-2005,11865)
+  rectangle layer=46 xyNo=5 (-2005,-710)(-2005,-195)(11320,-195)(11320,-710)(-2005,-710)
+  rectangle layer=46 xyNo=5 (-2005,-710)(-2005,12360)(-1490,12360)(-1490,-710)(-2005,-710)
+  rectangle layer=46 xyNo=5 (10895,-710)(10895,12380)(11320,12380)(11320,-710)(10895,-710)
+  rectangle layer=48 xyNo=5 (-11720,5775)(-11720,6360)(8150,6360)(8150,5775)(-11720,5775)
+  rectangle layer=47 xyNo=5 (655,5880)(655,6130)(905,6130)(905,5880)(655,5880)
+  rectangle layer=47 xyNo=5 (7605,5880)(7605,6130)(7855,6130)(7855,5880)(7605,5880)
+  rectangle layer=48 xyNo=5 (570,6920)(570,7505)(25395,7505)(25395,6920)(570,6920)
+  rectangle layer=48 xyNo=5 (-1995,4610)(-1995,5195)(25395,5195)(25395,4610)(-1995,4610)
+  rectangle layer=47 xyNo=5 (1770,7025)(1770,7275)(2020,7275)(2020,7025)(1770,7025)
+  rectangle layer=47 xyNo=5 (6525,4725)(6525,4975)(6775,4975)(6775,4725)(6525,4725)
+  rectangle layer=46 xyNo=5 (5410,3465)(5410,3980)(6940,3980)(6940,3465)(5410,3465)
+  rectangle layer=46 xyNo=5 (5405,3475)(5405,7505)(5920,7505)(5920,3475)(5405,3475)
+  rectangle layer=47 xyNo=5 (5505,7005)(5505,7255)(5755,7255)(5755,7005)(5505,7005)
+  rectangle layer=46 xyNo=5 (1665,3775)(1665,4290)(3195,4290)(3195,3775)(1665,3775)
+  rectangle layer=46 xyNo=5 (2685,3775)(2685,5225)(3295,5225)(3295,3775)(2685,3775)
+  rectangle layer=47 xyNo=5 (2790,4730)(2790,4980)(3040,4980)(3040,4730)(2790,4730)
+  rectangle layer=46 xyNo=5 (15990,9105)(15990,11095)(16825,11095)(16825,9105)(15990,9105)
+  rectangle layer=46 xyNo=5 (17905,9105)(17905,11095)(18740,11095)(18740,9105)(17905,9105)
+  rectangle layer=48 xyNo=5 (15940,5775)(15940,6360)(46340,6360)(46340,5775)(15940,5775)
+  rectangle layer=46 xyNo=5 (24645,-1385)(24645,10965)(25160,10965)(25160,-1385)(24645,-1385)
+  rectangle layer=46 xyNo=5 (22780,3260)(22780,10965)(23295,10965)(23295,3260)(22780,3260)
+  rectangle layer=46 xyNo=5 (24500,9105)(24500,11095)(25335,11095)(25335,9105)(24500,9105)
+  rectangle layer=46 xyNo=5 (22585,9105)(22585,11095)(23420,11095)(23420,9105)(22585,9105)
+  rectangle layer=41 xyNo=5 (23645,8375)(23645,13500)(24145,13500)(24145,8375)(23645,8375)
+  rectangle layer=39 xyNo=5 (24815,9355)(24815,9585)(25045,9585)(25045,9355)(24815,9355)
+  rectangle layer=39 xyNo=5 (24785,10530)(24785,10760)(25015,10760)(25015,10530)(24785,10530)
+  rectangle layer=39 xyNo=5 (22940,9355)(22940,9585)(23170,9585)(23170,9355)(22940,9355)
+  rectangle layer=39 xyNo=5 (22940,10530)(22940,10760)(23170,10760)(23170,10530)(22940,10530)
+  rectangle layer=1 xyNo=5 (22145,8615)(22145,11615)(25645,11615)(25645,8615)(22145,8615)
+  boundary layer=46 xyNo=7 (22780,-1465)(22780,1800)(21710,1800)(21710,2315)(23295,2315)(23295,-1465)(22780,-1465)
+  boundary layer=46 xyNo=9 (18075,-1410)(18075,1930)(19050,1930)(19050,5215)(19580,5215)(19580,1415)(18590,1415)(18590,-1410)(18075,-1410)
+  rectangle layer=46 xyNo=5 (17905,-1465)(17905,525)(18740,525)(18740,-1465)(17905,-1465)
+  rectangle layer=46 xyNo=5 (15990,-1465)(15990,525)(16825,525)(16825,-1465)(15990,-1465)
+  rectangle layer=47 xyNo=5 (19200,4725)(19200,4975)(19450,4975)(19450,4725)(19200,4725)
+  rectangle layer=47 xyNo=5 (22920,4725)(22920,4975)(23170,4975)(23170,4725)(22920,4725)
+  rectangle layer=46 xyNo=5 (24500,-1465)(24500,525)(25335,525)(25335,-1465)(24500,-1465)
+  rectangle layer=46 xyNo=5 (22585,-1465)(22585,525)(23420,525)(23420,-1465)(22585,-1465)
+  rectangle layer=41 xyNo=5 (17050,-3575)(17050,2340)(17550,2340)(17550,-3575)(17050,-3575)
+  rectangle layer=41 xyNo=5 (23645,-2930)(23645,2340)(24145,2340)(24145,-2930)(23645,-2930)
+  rectangle layer=39 xyNo=5 (18220,-1215)(18220,-985)(18450,-985)(18450,-1215)(18220,-1215)
+  rectangle layer=39 xyNo=5 (18190,-40)(18190,190)(18420,190)(18420,-40)(18190,-40)
+  rectangle layer=39 xyNo=5 (16345,-1215)(16345,-985)(16575,-985)(16575,-1215)(16345,-1215)
+  rectangle layer=39 xyNo=5 (16345,-40)(16345,190)(16575,190)(16575,-40)(16345,-40)
+  rectangle layer=39 xyNo=5 (24815,-1215)(24815,-985)(25045,-985)(25045,-1215)(24815,-1215)
+  rectangle layer=39 xyNo=5 (24785,-40)(24785,190)(25015,190)(25015,-40)(24785,-40)
+  rectangle layer=39 xyNo=5 (22940,-1215)(22940,-985)(23170,-985)(23170,-1215)(22940,-1215)
+  rectangle layer=39 xyNo=5 (22940,-40)(22940,190)(23170,190)(23170,-40)(22940,-40)
+  rectangle layer=1 xyNo=5 (15550,-1955)(15550,1045)(19050,1045)(19050,-1955)(15550,-1955)
+  rectangle layer=1 xyNo=5 (22145,-1955)(22145,1045)(25645,1045)(25645,-1955)(22145,-1955)
+  rectangle layer=46 xyNo=5 (21695,1800)(21695,7580)(22210,7580)(22210,1800)(21695,1800)
+  rectangle layer=47 xyNo=5 (24795,5920)(24795,6170)(25045,6170)(25045,5920)(24795,5920)
+  rectangle layer=47 xyNo=5 (16330,5965)(16330,6215)(16580,6215)(16580,5965)(16330,5965)
+  rectangle layer=47 xyNo=5 (21840,7060)(21840,7310)(22090,7310)(22090,7060)(21840,7060)
+  rectangle layer=47 xyNo=5 (18200,7060)(18200,7310)(18450,7310)(18450,7060)(18200,7060)
+  rectangle layer=46 xyNo=5 (14315,-3575)(14315,13655)(14740,13655)(14740,-3575)(14315,-3575)
+  rectangle layer=48 xyNo=5 (14110,-3535)(14110,-2950)(17935,-2950)(17935,-3535)(14110,-3535)
+  rectangle layer=39 xyNo=5 (23785,-2670)(23785,-2440)(24015,-2440)(24015,-2670)(23785,-2670)
+  rectangle layer=39 xyNo=5 (17200,-3350)(17200,-3120)(17430,-3120)(17430,-3350)(17200,-3350)
+  rectangle layer=47 xyNo=5 (14410,-3395)(14410,-3145)(14660,-3145)(14660,-3395)(14410,-3395)
+  rectangle layer=48 xyNo=5 (23505,-2900)(23505,-2315)(27330,-2315)(27330,-2900)(23505,-2900)
+  rectangle layer=46 xyNo=5 (26355,-3155)(26355,15175)(26780,15175)(26780,-3155)(26355,-3155)
+  rectangle layer=47 xyNo=5 (26475,-2670)(26475,-2420)(26725,-2420)(26725,-2670)(26475,-2670)
+  rectangle layer=48 xyNo=5 (17040,14495)(17040,15080)(26850,15080)(26850,14495)(17040,14495)
+  rectangle layer=39 xyNo=5 (17200,14630)(17200,14860)(17430,14860)(17430,14630)(17200,14630)
+  rectangle layer=48 xyNo=5 (14270,12860)(14270,13445)(24205,13445)(24205,12860)(14270,12860)
+  rectangle layer=47 xyNo=5 (14410,13005)(14410,13255)(14660,13255)(14660,13005)(14410,13005)
+  rectangle layer=47 xyNo=5 (23805,13005)(23805,13255)(24055,13255)(24055,13005)(23805,13005)
+  rectangle layer=47 xyNo=5 (26475,14630)(26475,14880)(26725,14880)(26725,14630)(26475,14630)
+  rectangle layer=46 xyNo=5 (17080,-3520)(17080,-3020)(17580,-3020)(17580,-3520)(17080,-3520)
+  rectangle layer=47 xyNo=5 (17195,-3380)(17195,-3130)(17445,-3130)(17445,-3380)(17195,-3380)
+  rectangle layer=46 xyNo=5 (23675,12915)(23675,13490)(24200,13490)(24200,12915)(23675,12915)
+  rectangle layer=41 xyNo=5 (23645,8200)(23645,13325)(24145,13325)(24145,8200)(23645,8200)
+  rectangle layer=1 xyNo=5 (35635,8585)(35635,12585)(39135,12585)(39135,8585)(35635,8585)
+  rectangle layer=39 xyNo=5 (23785,13010)(23785,13240)(24015,13240)(24015,13010)(23785,13010)
+  rectangle layer=12 xyNo=5 (33285,-6840)(33285,16390)(49675,16390)(49675,-6840)(33285,-6840)
+  rectangle layer=46 xyNo=5 (17115,14465)(17115,15020)(17595,15020)(17595,14465)(17115,14465)
+  rectangle layer=47 xyNo=5 (17220,14640)(17220,14890)(17470,14890)(17470,14640)(17220,14640)
+  rectangle layer=46 xyNo=5 (23695,-2880)(23695,-2110)(24105,-2110)(24105,-2880)(23695,-2880)
+  rectangle layer=47 xyNo=5 (23785,-2685)(23785,-2435)(24035,-2435)(24035,-2685)(23785,-2685)
+  rectangle layer=41 xyNo=5 (37135,7950)(37135,15100)(37635,15100)(37635,7950)(37135,7950)
+  rectangle layer=39 xyNo=5 (36260,9355)(36260,9585)(36490,9585)(36490,9355)(36260,9355)
+  rectangle layer=39 xyNo=5 (36260,10530)(36260,10760)(36490,10760)(36490,10530)(36260,10530)
+  rectangle layer=39 xyNo=5 (36260,11640)(36260,11870)(36490,11870)(36490,11640)(36260,11640)
+  rectangle layer=39 xyNo=5 (38240,9355)(38240,9585)(38470,9585)(38470,9355)(38240,9355)
+  rectangle layer=39 xyNo=5 (38240,10530)(38240,10760)(38470,10760)(38470,10530)(38240,10530)
+  rectangle layer=39 xyNo=5 (38240,11640)(38240,11870)(38470,11870)(38470,11640)(38240,11640)
+  rectangle layer=46 xyNo=5 (37960,9095)(37960,12055)(38720,12055)(38720,9095)(37960,9095)
+  rectangle layer=46 xyNo=5 (35975,9095)(35975,12055)(36735,12055)(36735,9095)(35975,9095)
+  rectangle layer=46 xyNo=5 (29710,1855)(29710,7855)(31810,7855)(31810,1855)(29710,1855)
+  rectangle layer=46 xyNo=5 (45645,9095)(45645,12055)(46405,12055)(46405,9095)(45645,9095)
+  rectangle layer=46 xyNo=5 (43660,9095)(43660,12055)(44420,12055)(44420,9095)(43660,9095)
+  rectangle layer=41 xyNo=5 (44820,7950)(44820,15100)(45320,15100)(45320,7950)(44820,7950)
+  rectangle layer=39 xyNo=5 (43945,9355)(43945,9585)(44175,9585)(44175,9355)(43945,9355)
+  rectangle layer=39 xyNo=5 (43945,10530)(43945,10760)(44175,10760)(44175,10530)(43945,10530)
+  rectangle layer=39 xyNo=5 (43945,11640)(43945,11870)(44175,11870)(44175,11640)(43945,11640)
+  rectangle layer=39 xyNo=5 (45925,9355)(45925,9585)(46155,9585)(46155,9355)(45925,9355)
+  rectangle layer=39 xyNo=5 (45925,10530)(45925,10760)(46155,10760)(46155,10530)(45925,10530)
+  rectangle layer=39 xyNo=5 (45925,11640)(45925,11870)(46155,11870)(46155,11640)(45925,11640)
+  rectangle layer=46 xyNo=5 (48815,-4490)(48815,14765)(49240,14765)(49240,-4490)(48815,-4490)
+  rectangle layer=1 xyNo=5 (43320,8585)(43320,12585)(46820,12585)(46820,8585)(43320,8585)
+  rectangle layer=46 xyNo=5 (37960,-2035)(37960,925)(38720,925)(38720,-2035)(37960,-2035)
+  rectangle layer=46 xyNo=5 (35975,-2035)(35975,925)(36735,925)(36735,-2035)(35975,-2035)
+  rectangle layer=46 xyNo=5 (45645,-2035)(45645,925)(46405,925)(46405,-2035)(45645,-2035)
+  rectangle layer=46 xyNo=5 (43660,-2035)(43660,925)(44420,925)(44420,-2035)(43660,-2035)
+  rectangle layer=41 xyNo=5 (37135,-4765)(37135,2700)(37635,2700)(37635,-4765)(37135,-4765)
+  rectangle layer=41 xyNo=5 (44820,-4765)(44820,2700)(45320,2700)(45320,-4765)(44820,-4765)
+  rectangle layer=39 xyNo=5 (36260,-1775)(36260,-1545)(36490,-1545)(36490,-1775)(36260,-1775)
+  rectangle layer=39 xyNo=5 (36260,-600)(36260,-370)(36490,-370)(36490,-600)(36260,-600)
+  rectangle layer=39 xyNo=5 (36260,510)(36260,740)(36490,740)(36490,510)(36260,510)
+  rectangle layer=39 xyNo=5 (38240,-1775)(38240,-1545)(38470,-1545)(38470,-1775)(38240,-1775)
+  rectangle layer=39 xyNo=5 (38240,-600)(38240,-370)(38470,-370)(38470,-600)(38240,-600)
+  rectangle layer=39 xyNo=5 (38240,510)(38240,740)(38470,740)(38470,510)(38240,510)
+  rectangle layer=39 xyNo=5 (43945,-1775)(43945,-1545)(44175,-1545)(44175,-1775)(43945,-1775)
+  rectangle layer=39 xyNo=5 (43945,-600)(43945,-370)(44175,-370)(44175,-600)(43945,-600)
+  rectangle layer=39 xyNo=5 (43945,510)(43945,740)(44175,740)(44175,510)(43945,510)
+  rectangle layer=39 xyNo=5 (45925,-1775)(45925,-1545)(46155,-1545)(46155,-1775)(45925,-1775)
+  rectangle layer=39 xyNo=5 (45925,-600)(45925,-370)(46155,-370)(46155,-600)(45925,-600)
+  rectangle layer=39 xyNo=5 (45925,510)(45925,740)(46155,740)(46155,510)(45925,510)
+  rectangle layer=47 xyNo=5 (30600,4760)(30600,5010)(30850,5010)(30850,4760)(30600,4760)
+  rectangle layer=46 xyNo=5 (32830,-4490)(32830,-3975)(49240,-3975)(49240,-4490)(32830,-4490)
+  rectangle layer=1 xyNo=5 (35635,-2545)(35635,1455)(39135,1455)(39135,-2545)(35635,-2545)
+  rectangle layer=1 xyNo=5 (43320,-2545)(43320,1455)(46820,1455)(46820,-2545)(43320,-2545)
+  rectangle layer=46 xyNo=5 (32830,-4495)(32830,14765)(33345,14765)(33345,-4495)(32830,-4495)
+  rectangle layer=46 xyNo=5 (32830,14250)(32830,14765)(49240,14765)(49240,14250)(32830,14250)
+  rectangle layer=39 xyNo=5 (37270,14400)(37270,14630)(37500,14630)(37500,14400)(37270,14400)
+  rectangle layer=39 xyNo=5 (44960,14400)(44960,14630)(45190,14630)(45190,14400)(44960,14400)
+  rectangle layer=39 xyNo=5 (44960,-4340)(44960,-4110)(45190,-4110)(45190,-4340)(44960,-4340)
+  rectangle layer=39 xyNo=5 (37270,-4340)(37270,-4110)(37500,-4110)(37500,-4340)(37270,-4340)
+  rectangle layer=46 xyNo=5 (36085,5775)(36085,10965)(36600,10965)(36600,5775)(36085,5775)
+  rectangle layer=46 xyNo=5 (43800,5775)(43800,10965)(44315,10965)(44315,5775)(43800,5775)
+  rectangle layer=47 xyNo=5 (36220,5920)(36220,6170)(36470,6170)(36470,5920)(36220,5920)
+  rectangle layer=47 xyNo=5 (43905,5920)(43905,6170)(44155,6170)(44155,5920)(43905,5920)
+  rectangle layer=46 xyNo=5 (38095,-1410)(38095,6360)(38610,6360)(38610,-1410)(38095,-1410)
+  rectangle layer=46 xyNo=5 (45780,-1410)(45780,6360)(46295,6360)(46295,-1410)(45780,-1410)
+  rectangle layer=48 xyNo=5 (30505,4610)(30505,5195)(48355,5195)(48355,4610)(30505,4610)
+  rectangle layer=47 xyNo=5 (38205,5925)(38205,6175)(38455,6175)(38455,5925)(38205,5925)
+  rectangle layer=47 xyNo=5 (45905,5935)(45905,6185)(46155,6185)(46155,5935)(45905,5935)
+  rectangle layer=1 xyNo=5 (-12450,3070)(-12450,9070)(-9950,9070)(-9950,3070)(-12450,3070)
+  rectangle layer=46 xyNo=5 (-12250,3070)(-12250,9070)(-10150,9070)(-10150,3070)(-12250,3070)
+  rectangle layer=39 xyNo=5 (-11365,3975)(-11365,4205)(-11135,4205)(-11135,3975)(-11365,3975)
+  rectangle layer=39 xyNo=5 (-11365,4955)(-11365,5185)(-11135,5185)(-11135,4955)(-11365,4955)
+  rectangle layer=39 xyNo=5 (-11365,5955)(-11365,6185)(-11135,6185)(-11135,5955)(-11365,5955)
+  rectangle layer=39 xyNo=5 (-11365,6905)(-11365,7135)(-11135,7135)(-11135,6905)(-11365,6905)
+  rectangle layer=39 xyNo=5 (-11365,8025)(-11365,8255)(-11135,8255)(-11135,8025)(-11365,8025)
+  rectangle layer=47 xyNo=5 (10990,4730)(10990,4980)(11240,4980)(11240,4730)(10990,4730)
+  rectangle layer=47 xyNo=5 (-11360,5975)(-11360,6225)(-11110,6225)(-11110,5975)(-11360,5975)
+  rectangle layer=12 xyNo=5 (-13830,745)(-13830,10520)(-8305,10520)(-8305,745)(-13830,745)
+  rectangle layer=46 xyNo=5 (43785,-2035)(43785,5200)(44300,5200)(44300,-2035)(43785,-2035)
+  rectangle layer=46 xyNo=5 (36095,-2035)(36095,5200)(36610,5200)(36610,-2035)(36095,-2035)
+  rectangle layer=39 xyNo=5 (30595,2760)(30595,2990)(30825,2990)(30825,2760)(30595,2760)
+  rectangle layer=39 xyNo=5 (30595,3740)(30595,3970)(30825,3970)(30825,3740)(30595,3740)
+  rectangle layer=39 xyNo=5 (30595,4740)(30595,4970)(30825,4970)(30825,4740)(30595,4740)
+  rectangle layer=39 xyNo=5 (30595,5690)(30595,5920)(30825,5920)(30825,5690)(30595,5690)
+  rectangle layer=39 xyNo=5 (30595,6810)(30595,7040)(30825,7040)(30825,6810)(30595,6810)
+  rectangle layer=11 xyNo=5 (29240,375)(29240,8865)(32410,8865)(32410,375)(29240,375)
+  rectangle layer=47 xyNo=5 (43905,4775)(43905,5025)(44155,5025)(44155,4775)(43905,4775)
+  rectangle layer=1 xyNo=5 (29510,1855)(29510,7855)(32010,7855)(32010,1855)(29510,1855)
+  rectangle layer=47 xyNo=5 (36220,4765)(36220,5015)(36470,5015)(36470,4765)(36220,4765)
+  rectangle layer=3 xyNo=5 (-14750,-3950)(-14750,14600)(12350,14600)(12350,-3950)(-14750,-3950)
+  rectangle layer=12 xyNo=5 (12430,-6840)(12430,16390)(28820,16390)(28820,-6840)(12430,-6840)
+  rectangle layer=46 xyNo=5 (38095,7570)(38095,11990)(38610,11990)(38610,7570)(38095,7570)
+  rectangle layer=46 xyNo=5 (38105,7555)(38105,8065)(40330,8065)(40330,7555)(38105,7555)
+  rectangle layer=46 xyNo=5 (39810,4605)(39810,8075)(40320,8075)(40320,4605)(39810,4605)
+  rectangle layer=46 xyNo=5 (47490,4605)(47490,8075)(48000,8075)(48000,4605)(47490,4605)
+  rectangle layer=46 xyNo=5 (45785,7555)(45785,8065)(48010,8065)(48010,7555)(45785,7555)
+  rectangle layer=46 xyNo=5 (45775,7570)(45775,11990)(46290,11990)(46290,7570)(45775,7570)
+  rectangle layer=47 xyNo=5 (39935,4765)(39935,5015)(40185,5015)(40185,4765)(39935,4765)
+  rectangle layer=47 xyNo=5 (47605,4765)(47605,5015)(47855,5015)(47855,4765)(47605,4765)
+[csr530303@ws28 object_viewer]$ 
