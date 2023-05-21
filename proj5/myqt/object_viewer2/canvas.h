@@ -11,7 +11,7 @@
 
 #include <iostream>
 
-typedef enum {None = 0, Rectangle = 1, Boundary = 2, Path = 3} CommandType;
+typedef enum {None = 0, Rectangle = 1, Boundary = 2, Path = 3, Query = 4} CommandType;
 
 class Canvas : public QWidget
 {

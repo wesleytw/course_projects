@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <fstream>
+using namespace std;
 
 #include "main_window.h"
 #include "gdsFileParser.h"
@@ -172,13 +173,43 @@ void MainWindow::open()
     // force a redraw.
     _canvas->update();
 }
-
+bool openQuery = false;
 void MainWindow::query()
 {
-    QString info = _canvas->query();
-    QMessageBox dialog(this);
-    dialog.setText(info);
-    dialog.exec();
+    openQuery = !openQuery;
+    if (!openQuery)
+    {
+        cout << "unquery" << endl;
+    }
+    while (openQuery)
+    {
+            /* start collecting points */
+    if (!_canvas->start(Rectangle))
+    {
+        return;
+    }
+    cout << "query" << endl;
+    QEventLoop loop;
+    connect(_canvas, &Canvas::ButtonPress, &loop, &QEventLoop::quit);
+    cout << "0" << endl;
+    loop.exec();
+        QString info = _canvas->query();
+
+    cout << "1"  << endl;
+    _canvas->stop();
+
+    statusBar()->showMessage(info);
+    // statusBar()->showMessage(info);
+    }
+    // QEventLoop loop;
+    // connect(_canvas, &Canvas::ButtonPress, &loop, &QEventLoop::quit);
+
+    // QString info = _canvas->query();
+
+    // QMessageBox dialog(this);
+    // dialog.setText(info);
+    // dialog.exec();
+    // statusBar()->showMessage(info);
 }
 
 void MainWindow::quit()

@@ -3,14 +3,12 @@
 #include <QPainter>
 #include <QMouseEvent>
 #include <QTextStream>
+#include <QEventLoop>
 
 #include <iostream>
 
 Canvas::Canvas(QWidget *parent)
-    : QWidget(parent)
-    , _selectedObject(nullptr)
-    , _command(None)
-    , _orthagonal(false)
+    : QWidget(parent), _selectedObject(nullptr), _command(None), _orthagonal(false)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
@@ -18,7 +16,7 @@ Canvas::Canvas(QWidget *parent)
     setFocusPolicy(Qt::StrongFocus);
 }
 
-void Canvas::setUserRect(const QRect & userRect)
+void Canvas::setUserRect(const QRect &userRect)
 {
     _transform.setUserRect(userRect);
     _transform.setScale(rect().size());
@@ -110,7 +108,7 @@ void Canvas::panRight()
 }
 
 // convert point to orthoganal coordinates
-QPoint Canvas::toOrthogonal(const QPoint & pt) const
+QPoint Canvas::toOrthogonal(const QPoint &pt) const
 {
     if (!_pts.empty())
     {
@@ -141,7 +139,7 @@ void Canvas::mousePressEvent(QMouseEvent *event)
     {
         _selectedObject = nullptr;
 
-        for (QVector<ShapeObject*>::reverse_iterator it = _objects.rbegin(); it != _objects.rend(); it++)
+        for (QVector<ShapeObject *>::reverse_iterator it = _objects.rbegin(); it != _objects.rend(); it++)
         {
             if ((*it)->select(event->pos(), _transform))
             {
@@ -152,7 +150,7 @@ void Canvas::mousePressEvent(QMouseEvent *event)
 
         update();
     }
-    // interactive shape creatoin .. collect current point 
+    // interactive shape creatoin .. collect current point
     else
     {
         if (_orthagonal)
@@ -171,7 +169,7 @@ void Canvas::mousePressEvent(QMouseEvent *event)
     QWidget::mousePressEvent(event);
 }
 
-void Canvas::keyPressEvent(QKeyEvent * event)
+void Canvas::keyPressEvent(QKeyEvent *event)
 {
     if (Qt::Key_Enter == event->key() || Qt::Key_Return == event->key())
     {
@@ -209,7 +207,7 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
     QWidget::mouseMoveEvent(event);
 }
 
-void Canvas::paintEvent(QPaintEvent * event)
+void Canvas::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
 
@@ -218,7 +216,7 @@ void Canvas::paintEvent(QPaintEvent * event)
     painter.save();
 
     /* draw any existing shapes */
-    foreach (ShapeObject * s, _objects)
+    foreach (ShapeObject *s, _objects)
     {
         s->draw(&painter, _transform);
     }
@@ -227,17 +225,17 @@ void Canvas::paintEvent(QPaintEvent * event)
 
     switch (_command)
     {
-        case Rectangle:
-            RectangleShape::drawInteractive(&painter, _pts, _pos);
-            break;
-        case Boundary:
-            BoundaryShape::drawInteractive(&painter, _pts, _pos);
-            break;
-        case Path:
-            PathShape::drawInteractive(&painter, _pts, _pos);
-            break;
-        default:
-            break; 
+    case Rectangle:
+        RectangleShape::drawInteractive(&painter, _pts, _pos);
+        break;
+    case Boundary:
+        BoundaryShape::drawInteractive(&painter, _pts, _pos);
+        break;
+    case Path:
+        PathShape::drawInteractive(&painter, _pts, _pos);
+        break;
+    default:
+        break;
     }
 
     /* draw the selected shape */
@@ -249,26 +247,26 @@ void Canvas::paintEvent(QPaintEvent * event)
     painter.restore();
 }
 
-void Canvas::addRectangle(const QPointF & pt1, const QPointF & pt2, uint32_t layer)
+void Canvas::addRectangle(const QPointF &pt1, const QPointF &pt2, uint32_t layer)
 {
-    _objects << new RectangleShape (pt1, pt2, layer);
+    _objects << new RectangleShape(pt1, pt2, layer);
 }
 
-void Canvas::addBoundary(const QVector<QPointF> & pts, uint32_t layer)
+void Canvas::addBoundary(const QVector<QPointF> &pts, uint32_t layer)
 {
-    _objects << new BoundaryShape (pts, layer);
+    _objects << new BoundaryShape(pts, layer);
 }
 
-void Canvas::addPath(const QVector<QPointF> & pts, uint32_t width, uint32_t endStyle, uint32_t layer)
+void Canvas::addPath(const QVector<QPointF> &pts, uint32_t width, uint32_t endStyle, uint32_t layer)
 {
-    _objects << new PathShape (pts, width, endStyle, layer);
+    _objects << new PathShape(pts, width, endStyle, layer);
 }
 
 void Canvas::clear()
 {
-    foreach (ShapeObject * s, _objects)
+    foreach (ShapeObject *s, _objects)
     {
-//        delete s;
+        //        delete s;
     }
 
     _selectedObject = nullptr;
@@ -284,7 +282,7 @@ void Canvas::deleteObject()
 
         if (-1 != i)
         {
-//            delete _selectedObject;
+            //            delete _selectedObject;
             _selectedObject = nullptr;
             _objects.remove(i);
             update();
@@ -292,8 +290,14 @@ void Canvas::deleteObject()
     }
 }
 
+// bool openQuery = false;
 QString Canvas::query() const
 {
+    // openQuery = !openQuery;
+    // while (openQuery)
+    // {
+    // }
+
     if (nullptr == _selectedObject)
     {
         return QString("No object selected");
@@ -302,7 +306,7 @@ QString Canvas::query() const
     QString data;
     QTextStream ts(&data);
     ts.setRealNumberNotation(QTextStream::FixedNotation);
-    ts.setRealNumberPrecision (3);
+    ts.setRealNumberPrecision(3);
     ts << "Object: " << _selectedObject->getTypeString() << "\n";
     ts << "Layer: " << _selectedObject->getLayer() << "\n";
 
@@ -315,7 +319,7 @@ QString Canvas::query() const
 
     ts << "User coordinates:\n";
 
-    foreach (const QPointF & pt, _selectedObject->getPoints())
+    foreach (const QPointF &pt, _selectedObject->getPoints())
     {
         QPoint roundPt = pt.toPoint();
         ts << "(" << roundPt.x() << ", " << roundPt.y() << ")\n";
