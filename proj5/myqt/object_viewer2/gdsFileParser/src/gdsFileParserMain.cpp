@@ -519,7 +519,7 @@ void myObjRenderer()
     MyTestPath *path;
     MyTestInstance *inst;
     MyTestCell *cell;
-    int i1, i2, i3, i4;
+    int i1, i2, i3, i4, i5;
     MyTestXY *pt;
 
     global_canvas->clear();
@@ -556,14 +556,28 @@ void myObjRenderer()
                 break;
             }
             fprintf(stdout, "xyNo=%d ", shape->xyNo);
-            for (i4 = 0; i4 < shape->xyNo; i4++)
-            {
-                pt = &(shape->xyList[i4]);
-                fprintf(stdout, "(%d,%d)", pt->xCoord, pt->yCoord);
-            }
+            // for (i4 = 0; i4 < shape->xyNo; i4++)
+            // {
+            //     pt = &(shape->xyList[i4]);
+            //     fprintf(stdout, "(%d,%d)", pt->xCoord, pt->yCoord);
+            // }
             fprintf(stdout, "\n");
-
-            global_canvas->addRectangle(QPointF(shape->xyList[0].xCoord, shape->xyList[0].yCoord), QPointF(shape->xyList[2].xCoord, shape->xyList[2].yCoord), shape->layer /*layer*/);
+            if (shape->objType == dbcRectangle)
+            {
+                global_canvas->addRectangle(QPointF(shape->xyList[0].xCoord, shape->xyList[0].yCoord), QPointF(shape->xyList[2].xCoord, shape->xyList[2].yCoord), shape->layer /*layer*/);
+            }
+            else if (shape->objType == dbcBoundary)
+            {
+                cout << "dbcBoundary" << endl;
+                QVector<QPointF> bdryPts;
+                for (i5 = 0; i5 < shape->xyNo; i5++)
+                {
+                    pt = &(shape->xyList[i5]);
+                    // fprintf(stdout, "(%d,%d)", pt->xCoord, pt->yCoord);
+                    bdryPts << QPointF(pt->xCoord, pt->yCoord);
+                }
+                global_canvas->addBoundary(bdryPts, 14 /*layer*/);
+            }
         }
     }
 }
