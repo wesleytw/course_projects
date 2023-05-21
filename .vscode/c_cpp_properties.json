@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${default}",
+                "/Applications/Qt/6.5.0/macos/qml/QtCore"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "intelliSenseMode": "macos-clang-arm64"
+        }
+    ],
+    "version": 4
+}

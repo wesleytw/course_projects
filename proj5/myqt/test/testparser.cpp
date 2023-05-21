@@ -11,11 +11,11 @@
 #include "gdsFileParser.h"
 
 MainWindow::MainWindow()
-    : QMainWindow()
+    : QMainWindow ()
 {
     _canvas = new Canvas;
 
-    setCentralWidget(_canvas);
+    setCentralWidget (_canvas);
 
     _fileMenu = menuBar()->addMenu(tr("&File"));
     _editMenu = menuBar()->addMenu(tr("&Edit"));
@@ -27,148 +27,148 @@ MainWindow::MainWindow()
 
     createActions();
 
-    setGeometry(100, 100, 800, 600);
+    setGeometry (100, 100, 800, 600);
 }
 
 void MainWindow::createActions()
 {
-    QAction *newAct = nullptr;
+    QAction * newAct = nullptr;
 
     newAct = new QAction(tr("&Open..."), this);
     newAct->setIcon(QIcon(":/images/open.png"));
-    connect(newAct, &QAction::triggered, this, &MainWindow::open);
-    _fileMenu->addAction(newAct);
-    _fileToolbar->addAction(newAct);
+    connect (newAct, &QAction::triggered, this, &MainWindow::open);
+    _fileMenu->addAction (newAct);
+    _fileToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Query Selected"), this);
     newAct->setIcon(QIcon(":/images/digital.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_Q));
-    connect(newAct, &QAction::triggered, this, &MainWindow::query);
-    _fileMenu->addAction(newAct);
-    _fileToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_Q));
+    connect (newAct, &QAction::triggered, this, &MainWindow::query);
+    _fileMenu->addAction (newAct);
+    _fileToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Quit"), this);
-    _fileMenu->addAction(newAct);
-    connect(newAct, &QAction::triggered, this, &MainWindow::quit);
+    _fileMenu->addAction (newAct);
+    connect (newAct, &QAction::triggered, this, &MainWindow::quit);
 
     newAct = new QAction(tr("&Rectangle"), this);
     newAct->setToolTip("Create Rectangle object");
-    newAct->setShortcut(QKeySequence(Qt::Key_R));
-    connect(newAct, &QAction::triggered, this, &MainWindow::createRectangle);
-    _editMenu->addAction(newAct);
-    _editToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_R));
+    connect (newAct, &QAction::triggered, this, &MainWindow::createRectangle);
+    _editMenu->addAction (newAct);
+    _editToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Boundary"), this);
     newAct->setToolTip("Create Boundary object");
-    newAct->setShortcut(QKeySequence(Qt::Key_B));
-    connect(newAct, &QAction::triggered, this, &MainWindow::createBoundary);
-    _editMenu->addAction(newAct);
-    _editToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_B));
+    connect (newAct, &QAction::triggered, this, &MainWindow::createBoundary);
+    _editMenu->addAction (newAct);
+    _editToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Path"), this);
     newAct->setToolTip("Create Path object");
-    newAct->setShortcut(QKeySequence(Qt::Key_P));
-    connect(newAct, &QAction::triggered, this, &MainWindow::createPath);
-    _editMenu->addAction(newAct);
-    _editToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_P));
+    connect (newAct, &QAction::triggered, this, &MainWindow::createPath);
+    _editMenu->addAction (newAct);
+    _editToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Delete"), this);
     newAct->setIcon(QIcon(":/images/delete.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_Delete));
-    connect(newAct, &QAction::triggered, this, &MainWindow::deleteObject);
-    _editMenu->addAction(newAct);
-    _editToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_Delete));
+    connect (newAct, &QAction::triggered, this, &MainWindow::deleteObject);
+    _editMenu->addAction (newAct);
+    _editToolbar->addAction (newAct);
 
     newAct = new QAction(tr("Delete &All"), this);
-    connect(newAct, &QAction::triggered, this, &MainWindow::clear);
-    _editMenu->addAction(newAct);
+    connect (newAct, &QAction::triggered, this, &MainWindow::clear);
+    _editMenu->addAction (newAct);
 
     newAct = new QAction(tr("&Fit"), this);
     newAct->setIcon(QIcon(":/images/fit.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_F));
-    connect(newAct, &QAction::triggered, this, &MainWindow::zoomFit);
-    _viewMenu->addAction(newAct);
-    _viewToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_F));
+    connect (newAct, &QAction::triggered, this, &MainWindow::zoomFit);
+    _viewMenu->addAction (newAct);
+    _viewToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Zoom In"), this);
     newAct->setIcon(QIcon(":/images/zoomin.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_BracketLeft));
-    connect(newAct, &QAction::triggered, this, &MainWindow::zoomIn);
-    _viewMenu->addAction(newAct);
-    _viewToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_BracketLeft));
+    connect (newAct, &QAction::triggered, this, &MainWindow::zoomIn);
+    _viewMenu->addAction (newAct);
+    _viewToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Zoom Out"), this);
     newAct->setIcon(QIcon(":/images/zoomout.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_BracketRight));
-    connect(newAct, &QAction::triggered, this, &MainWindow::zoomOut);
-    _viewMenu->addAction(newAct);
-    _viewToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_BracketRight));
+    connect (newAct, &QAction::triggered, this, &MainWindow::zoomOut);
+    _viewMenu->addAction (newAct);
+    _viewToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Pan up"), this);
     newAct->setIcon(QIcon(":/images/up.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_Up));
-    connect(newAct, &QAction::triggered, this, &MainWindow::panUp);
-    _viewMenu->addAction(newAct);
-    _viewToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_Up));
+    connect (newAct, &QAction::triggered, this, &MainWindow::panUp);
+    _viewMenu->addAction (newAct);
+    _viewToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Pan down"), this);
     newAct->setIcon(QIcon(":/images/down.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_Down));
-    connect(newAct, &QAction::triggered, this, &MainWindow::panDown);
-    _viewMenu->addAction(newAct);
-    _viewToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_Down));
+    connect (newAct, &QAction::triggered, this, &MainWindow::panDown);
+    _viewMenu->addAction (newAct);
+    _viewToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Pan left"), this);
     newAct->setIcon(QIcon(":/images/left.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_Left));
-    connect(newAct, &QAction::triggered, this, &MainWindow::panLeft);
-    _viewMenu->addAction(newAct);
-    _viewToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_Left));
+    connect (newAct, &QAction::triggered, this, &MainWindow::panLeft);
+    _viewMenu->addAction (newAct);
+    _viewToolbar->addAction (newAct);
 
     newAct = new QAction(tr("&Pan right"), this);
     newAct->setIcon(QIcon(":/images/right.png"));
-    newAct->setShortcut(QKeySequence(Qt::Key_Right));
-    connect(newAct, &QAction::triggered, this, &MainWindow::panRight);
-    _viewMenu->addAction(newAct);
-    _viewToolbar->addAction(newAct);
+    newAct->setShortcut (QKeySequence(Qt::Key_Right));
+    connect (newAct, &QAction::triggered, this, &MainWindow::panRight);
+    _viewMenu->addAction (newAct);
+    _viewToolbar->addAction (newAct);
 }
 
 void MainWindow::open()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open GDS file"), ".", tr("GDS file(*.gds)"));
+    QString fileName = QFileDialog::getOpenFileName(this,
+         tr("Open GDS file"), ".", tr("GDS file(*.gds)"));
 
-    extern int GdsFileParserMain(const char *, Canvas *, int);
-    // isInvalidFile: 0==valid, 1==invalid
-    int isInvalidFile = GdsFileParserMain(fileName.toLocal8Bit().data(), MainWindow::_canvas, 111);
+    extern int GdsFileParserMain(const char *);
+    GdsFileParserMain(fileName.toLocal8Bit().data());
 
     // ... add canvas objects ...
-    if (isInvalidFile)
-    {
-        // remove existing objects
-        _canvas->clear();
+    
 
-        // set sample user coordinate rect, this would come from the GDS file.
-        _canvas->setUserRect(QRect(-2000, -2000, 120000, 120000));
+    // remove existing objects
+    _canvas->clear();
 
-        // create sample rectangle object
-        _canvas->addRectangle(QPointF(-1000, -1000), QPointF(100000, 100000), 16 /*layer*/);
+    // set sample user coordinate rect, this would come from the GDS file.
+    _canvas->setUserRect (QRect(-2000, -2000, 120000, 120000));
 
-        // create sample boundary object
-        QVector<QPointF> bdryPts;
-        bdryPts << QPointF(4000, 4000);
-        bdryPts << QPointF(110000, 6000);
-        bdryPts << QPointF(-2000, 90000);
-        bdryPts << bdryPts[0];
-        _canvas->addBoundary(bdryPts, 14 /*layer*/);
+    // create sample rectangle object
+    // _canvas->addRectangle(QPointF(-1000, -1000), QPointF(100000, 100000), 16/*layer*/);
 
-        // create sample path. NOTE points must be orthagonal
-        QVector<QPointF> pathPts;
-        pathPts << QPointF(3000, 3000);
-        pathPts << QPointF(90000, 3000);
-        pathPts << QPointF(90000, 70000);
-        pathPts << QPointF(0, 70000);
-        _canvas->addPath(pathPts, 30 /*width*/, 0 /*endStyle*/, 17 /*layer*/);
-    }
+    // create sample boundary object
+    // QVector<QPointF> bdryPts;
+    // bdryPts << QPointF(4000, 4000);
+    // bdryPts << QPointF(110000, 6000);
+    // bdryPts << QPointF(-2000, 90000);
+    // bdryPts << bdryPts[0];
+    // _canvas->addBoundary(bdryPts, 14/*layer*/);
+
+    // create sample path. NOTE points must be orthagonal
+    QVector<QPointF> pathPts;
+    pathPts << QPointF(3000, 3000);
+    pathPts << QPointF(90000, 3000);
+    pathPts << QPointF(90000, 70000);
+    pathPts << QPointF(0, 70000);
+    _canvas->addPath(pathPts, 30/*width*/, 0/*endStyle*/, 17/*layer*/);
+
     // force a redraw.
     _canvas->update();
 }
@@ -216,10 +216,11 @@ void MainWindow::createRectangle()
     /* add the rectange to the object collection */
     if (userPoints.size() > 1)
     {
-        _canvas->addRectangle(userPoints[0], userPoints[1], 19 /*layer*/);
+        _canvas->addRectangle (userPoints[0], userPoints[1], 19/*layer*/);
     }
 
     statusBar()->showMessage(tr("Create Rectangle: done"));
+
 }
 
 void MainWindow::createBoundary()
@@ -241,9 +242,9 @@ void MainWindow::createBoundary()
     /* stop collecting points */
     _canvas->stop();
 
-    /* store user coordinates */
-    QVector<QPointF> userPoints = _canvas->getUserPoints();
-
+   /* store user coordinates */
+   QVector<QPointF> userPoints = _canvas->getUserPoints();
+  
     uint32_t count = userPoints.size();
 
     if (count > 2)
@@ -251,7 +252,7 @@ void MainWindow::createBoundary()
         /* make sure boundary is closed */
         userPoints << userPoints[0];
 
-        _canvas->addBoundary(userPoints, 10 /*layer*/);
+        _canvas->addBoundary(userPoints, 10/*layer*/);
     }
 
     statusBar()->showMessage(tr("Create Boundary: done"));
@@ -276,14 +277,14 @@ void MainWindow::createPath()
     /* stop collecting points. Add the current cursor postion to point list */
     _canvas->stop(true);
 
-    /* store user coordinates */
-    QVector<QPointF> userPoints = _canvas->getUserPoints();
-
+   /* store user coordinates */
+   QVector<QPointF> userPoints = _canvas->getUserPoints();
+  
     uint32_t count = userPoints.size();
 
     if (count > 1)
     {
-        _canvas->addPath(userPoints, INTERACTIVE_PATH_WIDTH /*width*/, INTERACTIVE_PATH_ENDSTYLE /*endStyle*/, 18 /*layer*/);
+        _canvas->addPath(userPoints, INTERACTIVE_PATH_WIDTH/*width*/, INTERACTIVE_PATH_ENDSTYLE/*endStyle*/, 18/*layer*/);
     }
 
     statusBar()->showMessage(tr("Create Path: done"));

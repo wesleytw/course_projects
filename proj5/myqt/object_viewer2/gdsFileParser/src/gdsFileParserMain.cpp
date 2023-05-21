@@ -28,6 +28,11 @@
  * 2017-06-10: Kevin Nesmith: Initial contribution.
  *
  */
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QEventLoop>
+#include <QFileDialog>
+#include <QMessageBox>
 
 #include <stdlib.h>
 
@@ -38,8 +43,12 @@
 #include <iomanip>
 
 #include "gdsFileParser.h"
+#include "../../main_window.h"
+// #include "../../../canvas.h"
 
 using namespace std;
+
+//typedef MainWindow;
 
 #define SET_2W setfill('0') << setw(2)
 
@@ -414,13 +423,21 @@ int GdsFileParserMain(int argc, char *argv[])
 #endif                              // Honda
 }
 
-int GdsFileParserMain(const char *fileName)
+int GdsFileParserMain(const char *fileName,  Canvas * _canvas, int i)
 {
-    cout << "fileName" << fileName;
     MyTestParser parser;
     int rc = parser.parse(fileName); // Honda
-    MyTestDump();                    // Honda
-    return rc;                       // Honda
+    // MyTestDump();       
+        // _canvas->addRectangle(QPointF(-1000, -1000), QPointF(100000, 100000), 16/*layer*/);
+            QVector<QPointF> pathPts;
+    pathPts << QPointF(3000, 3000);
+    pathPts << QPointF(90000, 3000);
+    _canvas->addPath(pathPts, 30/*width*/, 0/*endStyle*/, 17/*layer*/);
+// _canvas->clear();
+    cout << "fileName: " << fileName << endl
+         << "rc: " << rc << endl
+         << "i " << i << endl;
+    return rc; // Honda
 }
 
 #include <assert.h> // Honda

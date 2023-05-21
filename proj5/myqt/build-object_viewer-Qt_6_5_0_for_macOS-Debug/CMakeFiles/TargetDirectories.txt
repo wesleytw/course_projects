@@ -1,0 +1,9 @@
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/object_viewer.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/edit_cache.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/rebuild_cache.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/list_install_components.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/install.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/install/local.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/install/strip.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/object_viewer_autogen_timestamp_deps.dir
+/Users/wesley/Documents/清大/四下/eda/course_projects/proj5/myqt/build-object_viewer-Qt_6_5_0_for_macOS-Debug/CMakeFiles/object_viewer_autogen.dir
