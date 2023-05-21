@@ -30,6 +30,7 @@ private slots:
     void clear();
     void deleteObject();
     void query();
+    void myQueryLoop();
 
 private:
     void createActions();

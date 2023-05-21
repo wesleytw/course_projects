@@ -3,6 +3,7 @@
 #include <QEventLoop>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QObject>
 
 #include <iostream>
 #include <fstream>
@@ -174,17 +175,10 @@ void MainWindow::open()
     _canvas->update();
 }
 bool openQuery = false;
-void MainWindow::query()
+void MainWindow::myQueryLoop()
 {
-    openQuery = !openQuery;
-    if (!openQuery)
-    {
-        cout << "unquery" << endl;
-    }
-    while (openQuery)
-    {
-            /* start collecting points */
-    if (!_canvas->start(Rectangle))
+    /* start collecting points */
+    if (!_canvas->start(Query))
     {
         return;
     }
@@ -193,23 +187,28 @@ void MainWindow::query()
     connect(_canvas, &Canvas::ButtonPress, &loop, &QEventLoop::quit);
     cout << "0" << endl;
     loop.exec();
-        QString info = _canvas->query();
+    QString info = _canvas->query();
+    statusBar()->showMessage(info);
 
-    cout << "1"  << endl;
+    cout << "1" << endl;
     _canvas->stop();
 
-    statusBar()->showMessage(info);
-    // statusBar()->showMessage(info);
+    myQueryLoop();
+}
+void MainWindow::query()
+{
+    openQuery = !openQuery;
+    if (!openQuery)
+    {
+        _canvas->stop();
+        cout << "unquery " << openQuery << endl;
+        statusBar()->showMessage(QString(""));
     }
-    // QEventLoop loop;
-    // connect(_canvas, &Canvas::ButtonPress, &loop, &QEventLoop::quit);
-
-    // QString info = _canvas->query();
-
-    // QMessageBox dialog(this);
-    // dialog.setText(info);
-    // dialog.exec();
-    // statusBar()->showMessage(info);
+    else
+    {
+        statusBar()->showMessage(QString("No object selected (click query icon to stop querying)"));
+        myQueryLoop();
+    }
 }
 
 void MainWindow::quit()

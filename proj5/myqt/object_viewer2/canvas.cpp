@@ -150,6 +150,22 @@ void Canvas::mousePressEvent(QMouseEvent *event)
 
         update();
     }
+    else if (Query == _command)
+    {
+        _selectedObject = nullptr;
+
+        for (QVector<ShapeObject *>::reverse_iterator it = _objects.rbegin(); it != _objects.rend(); it++)
+        {
+            if ((*it)->select(event->pos(), _transform))
+            {
+                _selectedObject = *it;
+                break;
+            }
+        }
+
+        // update();
+        emit ButtonPress();
+    }
     // interactive shape creatoin .. collect current point
     else
     {
@@ -290,17 +306,12 @@ void Canvas::deleteObject()
     }
 }
 
-// bool openQuery = false;
 QString Canvas::query() const
 {
-    // openQuery = !openQuery;
-    // while (openQuery)
-    // {
-    // }
 
     if (nullptr == _selectedObject)
     {
-        return QString("No object selected");
+        return QString("No object selected (click query icon to stop querying)");
     }
 
     QString data;
@@ -324,6 +335,6 @@ QString Canvas::query() const
         QPoint roundPt = pt.toPoint();
         ts << "(" << roundPt.x() << ", " << roundPt.y() << ")\n";
     }
-
+    ts << " (click query icon to stop query)";
     return data;
 }
