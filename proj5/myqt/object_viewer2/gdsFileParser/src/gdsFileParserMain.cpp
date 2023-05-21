@@ -48,13 +48,14 @@
 
 using namespace std;
 
-//typedef MainWindow;
+// typedef MainWindow;
 
 #define SET_2W setfill('0') << setw(2)
 
 #include <vector> // Honda: std::vector
 
 void MyTestDump(); // Honda
+void myObjRenderer();
 
 enum MyTestObjEnum
 { // Honda
@@ -81,6 +82,7 @@ class MyTestShape // Honda: sample code of gds shape (base-class)
 
     friend class MyTestParser;
     friend void MyTestDump();
+    friend void myObjRenderer();
 };
 
 class MyTestBoundary : public MyTestShape // Honda: sample code of gds boundary
@@ -88,6 +90,7 @@ class MyTestBoundary : public MyTestShape // Honda: sample code of gds boundary
 public:
     friend class MyTestParser;
     friend void MyTestDump();
+    friend void myObjRenderer();
 };
 
 class MyTestPath : public MyTestShape // Honda: sample code of gds path
@@ -99,6 +102,7 @@ class MyTestPath : public MyTestShape // Honda: sample code of gds path
 public:
     friend class MyTestParser;
     friend void MyTestDump();
+    friend void myObjRenderer();
 };
 
 class MyTestInstance
@@ -108,6 +112,7 @@ class MyTestInstance
 
     friend class MyTestParser;
     friend void MyTestDump();
+    friend void myObjRenderer();
 };
 
 class MyTestCell // Honda: sample code of gds cell
@@ -118,6 +123,7 @@ class MyTestCell // Honda: sample code of gds cell
 
     friend class MyTestParser;
     friend void MyTestDump();
+    friend void myObjRenderer();
 };
 
 class MyTestLib // Honda: sample code of gds library
@@ -131,6 +137,7 @@ class MyTestLib // Honda: sample code of gds library
 
     friend class MyTestParser;
     friend void MyTestDump();
+    friend void myObjRenderer();
 };
 class MyTestShape *MyGlobalShape;       // Honda: active global boundary/path
 class MyTestBoundary *MyGlobalBoundary; // Honda: active global boundary
@@ -209,6 +216,13 @@ protected:
         MyGlobalShape = MyGlobalBoundary;                 // Honda
         MyGlobalBoundary->objType = dbcBoundary;          // Honda
         MyGlobalCell->shapeList.push_back(MyGlobalShape); // Honda
+
+        // QVector<QPointF> bdryPts;
+        // bdryPts << QPointF(4000, 4000);
+        // bdryPts << QPointF(110000, 6000);
+        // bdryPts << QPointF(-2000, 90000);
+        // bdryPts << bdryPts[0];
+        // _canvas->addBoundary(bdryPts, 14 /*layer*/);
     };
     virtual void onParsedPathStart()
     {
@@ -422,18 +436,17 @@ int GdsFileParserMain(int argc, char *argv[])
     return rc;                      // Honda
 #endif                              // Honda
 }
-
-int GdsFileParserMain(const char *fileName,  Canvas * _canvas, int i)
+Canvas *global_canvas;
+int GdsFileParserMain(const char *fileName, Canvas *_canvas, int i)
 {
     MyTestParser parser;
-    int rc = parser.parse(fileName); // Honda
-    // MyTestDump();       
-        // _canvas->addRectangle(QPointF(-1000, -1000), QPointF(100000, 100000), 16/*layer*/);
-            QVector<QPointF> pathPts;
-    pathPts << QPointF(3000, 3000);
-    pathPts << QPointF(90000, 3000);
-    _canvas->addPath(pathPts, 30/*width*/, 0/*endStyle*/, 17/*layer*/);
-// _canvas->clear();
+    int rc = parser.parse(fileName); // rc: 0==valid, 1==invalid // Honda
+    MyTestDump();
+    if (rc == 0)
+    {
+        global_canvas = _canvas;
+        myObjRenderer();
+    }
     cout << "fileName: " << fileName << endl
          << "rc: " << rc << endl
          << "i " << i << endl;
@@ -491,6 +504,66 @@ void MyTestDump()   // Honda
                 fprintf(stdout, "(%d,%d)", pt->xCoord, pt->yCoord);
             }
             fprintf(stdout, "\n");
+        }
+    }
+}
+
+void myObjRenderer()
+{
+    if (NULL == MyGlobalLib)
+        return;
+    fprintf(stdout, "****************************************************************************\n");
+    fprintf(stdout, "library: name=%s unserUnits=%g dbUnit=%g\n", MyGlobalLib->libName.c_str(), MyGlobalLib->userUnits, MyGlobalLib->dbUnits);
+    MyTestShape *shape;
+    MyTestBoundary *boundary;
+    MyTestPath *path;
+    MyTestInstance *inst;
+    MyTestCell *cell;
+    int i1, i2, i3, i4;
+    MyTestXY *pt;
+
+    global_canvas->clear();
+    // set sample user coordinate rect, this would come from the GDS file.
+    global_canvas->setUserRect(QRect(-20000, -20000, 100000, 100000));
+
+    for (i1 = 0; i1 < MyGlobalLib->cellList.size(); i1++)
+    {
+        cell = MyGlobalLib->cellList[i1];
+        fprintf(stdout, "cell: name=%s\n", cell->cellName.c_str());
+        for (i2 = 0; i2 < cell->instList.size(); i2++)
+        {
+            inst = cell->instList[i2];
+            fprintf(stdout, "  instance masterCell=%s origin=(%d,%d)\n", inst->masterCell.c_str(), inst->origin.xCoord, inst->origin.yCoord);
+        }
+        for (i3 = 0; i3 < cell->shapeList.size(); i3++)
+        {
+            shape = cell->shapeList[i3];
+            switch (shape->objType)
+            {
+            case dbcRectangle:
+                // fprintf(stdout, "  rectangle layer=%d ", shape->layer);
+                break;
+            case dbcBoundary:
+                // fprintf(stdout, "  boundary layer=%d ", shape->layer);
+                break;
+            case dbcPath:
+                // fprintf(stdout, "  path layer=%d ", shape->layer);
+                // path = (MyTestPath *)shape;
+                // fprintf(stdout, "pathType=%d width=%d bext=%d eext=%d ", path->pathType, path->width, path->bext, path->eext);
+                break;
+            default:
+                assert(0);
+                break;
+            }
+            fprintf(stdout, "xyNo=%d ", shape->xyNo);
+            for (i4 = 0; i4 < shape->xyNo; i4++)
+            {
+                pt = &(shape->xyList[i4]);
+                fprintf(stdout, "(%d,%d)", pt->xCoord, pt->yCoord);
+            }
+            fprintf(stdout, "\n");
+
+            global_canvas->addRectangle(QPointF(shape->xyList[0].xCoord, shape->xyList[0].yCoord), QPointF(shape->xyList[2].xCoord, shape->xyList[2].yCoord), shape->layer /*layer*/);
         }
     }
 }

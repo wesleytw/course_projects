@@ -84,6 +84,7 @@
     "functional": "cpp",
     "iterator": "cpp",
     "utility": "cpp",
-    "*.ipp": "cpp"
+    "*.ipp": "cpp",
+    "valarray": "cpp"
   }
 }

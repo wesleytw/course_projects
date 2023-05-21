@@ -1,6 +1,5 @@
 #include "shape.h"
 #include <QTextStream>
-#include <QPainterPath>
 
 /* Define layers */
 
@@ -13,23 +12,23 @@ typedef struct LayerTable
 } LayerTable;
 
 LayerTable _layerTable[] = {
-    {Qt::black, Qt::SolidLine, 1, Qt::NoBrush},
+    {Qt::yellow, Qt::SolidLine, 1, Qt::NoBrush},
     {Qt::red, Qt::SolidLine, 1, Qt::NoBrush},
     {Qt::green, Qt::SolidLine, 1, Qt::NoBrush},
     {Qt::blue, Qt::SolidLine, 1, Qt::NoBrush},
-    {Qt::black, Qt::DotLine, 1, Qt::NoBrush},
+    {Qt::yellow, Qt::DotLine, 1, Qt::NoBrush},
     {Qt::red, Qt::DotLine, 1, Qt::NoBrush},
     {Qt::green, Qt::DotLine, 1, Qt::NoBrush},
     {Qt::blue, Qt::DotLine, 1, Qt::NoBrush},
-    {Qt::black, Qt::DashLine, 1, Qt::NoBrush},
+    {Qt::yellow, Qt::DashLine, 1, Qt::NoBrush},
     {Qt::red, Qt::DashLine, 1, Qt::NoBrush},
     {Qt::cyan, Qt::DashLine, 3, Qt::NoBrush},
     {Qt::blue, Qt::DashLine, 1, Qt::NoBrush},
-    {Qt::black, Qt::SolidLine, 1, Qt::DiagCrossPattern},
+    {Qt::darkBlue, Qt::SolidLine, 1, Qt::DiagCrossPattern},
     {Qt::red, Qt::SolidLine, 1, Qt::DiagCrossPattern},
     {Qt::green, Qt::SolidLine, 1, Qt::DiagCrossPattern},
     {Qt::blue, Qt::SolidLine, 1, Qt::DiagCrossPattern},
-    {Qt::black, Qt::SolidLine, 1, Qt::Dense5Pattern},
+    {Qt::yellow, Qt::SolidLine, 1, Qt::Dense5Pattern},
     {Qt::red, Qt::SolidLine, 1, Qt::Dense5Pattern},
     {Qt::green, Qt::SolidLine, 1, Qt::Dense5Pattern},
     {Qt::blue, Qt::SolidLine, 1, Qt::Dense5Pattern},
