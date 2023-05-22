@@ -42,7 +42,10 @@ bool Canvas::start(CommandType type, bool orthagonal)
     // iitialize point collection for interative shape creation
     _command = type;
     _orthagonal = orthagonal;
-    _pts.clear();
+    if (!Query)
+    {
+        _pts.clear();
+    }
 
     return true;
 }

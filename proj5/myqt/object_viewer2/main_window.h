@@ -7,6 +7,7 @@
 #include <QMenu>
 #include <QToolBar>
 #include <QEventLoop>
+#include <QCloseEvent>
 
 class MainWindow : public QMainWindow
 {
@@ -32,6 +33,7 @@ private slots:
     void deleteObject();
     void query();
     void myQueryLoop();
+    void closeEvent(QCloseEvent *);
 
 private:
     void createActions();

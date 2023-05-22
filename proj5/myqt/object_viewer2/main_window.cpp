@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QObject>
+#include <QCloseEvent>
 
 #include <iostream>
 #include <fstream>
@@ -171,19 +172,20 @@ void MainWindow::open()
         pathPts << QPointF(0, 70000);
         _canvas->addPath(pathPts, 30 /*width*/, 0 /*endStyle*/, 17 /*layer*/);
 
-        // create MY sample path. NOTE points must be orthagonal
+        // create MY sample objects.
         QVector<QPointF> myPathPts;
         myPathPts << QPointF(5000, 5000);
         myPathPts << QPointF(5000, 50000);
         myPathPts << QPointF(50000, 50000);
         myPathPts << QPointF(50000, 80000);
         _canvas->addPath(myPathPts, 20 /*width*/, 0 /*endStyle*/, 12 /*layer*/);
+        _canvas->addRectangle(QPointF(60000, 60000), QPointF(150000, 150000), 12 /*layer*/);
+        _canvas->addRectangle(QPointF(50000, 70000), QPointF(80000, 80000), 14 /*layer*/);
     }
     // force a redraw.
     _canvas->update();
 }
 bool openQuery = false;
-// QEventLoop loop;
 
 void MainWindow::myQueryLoop() // make myQueryLoop a func of MainWindow, so that it can be easier to use canvas and statusBar().
 {
@@ -225,7 +227,8 @@ void MainWindow::query()
     }
     else
     {
-        statusBar()->showMessage(QString("No object selected (click query icon to stop querying)"));
+        QString info = _canvas->query();
+        statusBar()->showMessage(info);
         myQueryLoop();
     }
 }
@@ -381,4 +384,22 @@ void MainWindow::clear()
 void MainWindow::deleteObject()
 {
     _canvas->deleteObject();
+}
+
+// override closeEvent() so that the program won't fall into infinite loop if query is activaite.
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    // QMessageBox::StandardButton resBtn = QMessageBox::question(this, tr("Exit viewer\n"),
+    //                                                            tr("Are you sure?\n"),
+    //                                                            QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+    //                                                            QMessageBox::Yes);
+    // if (resBtn != QMessageBox::Yes)
+    // {
+    //     event->ignore();
+    // }
+    // else
+    // {
+    //     event->accept();
+    // }
+    query();
 }
