@@ -183,6 +183,8 @@ void MainWindow::open()
     _canvas->update();
 }
 bool openQuery = false;
+// QEventLoop loop;
+
 void MainWindow::myQueryLoop() // make myQueryLoop a func of MainWindow, so that it can be easier to use canvas and statusBar().
 {
     cout << "openQuery" << openQuery << endl;
@@ -198,6 +200,12 @@ void MainWindow::myQueryLoop() // make myQueryLoop a func of MainWindow, so that
     connect(_canvas, &Canvas::ButtonPress, &loop, &QEventLoop::quit); // build a connection between _canvas and loop.
     cout << "0" << endl;
     loop.exec(); // execute loop, stop when Canvas::ButtonPress triggered, then go on to next.
+    if (!openQuery)
+    {
+        loop.exit();
+        _canvas->stop();
+        return;
+    }
     QString info = _canvas->query();
     statusBar()->showMessage(info);
 
@@ -211,7 +219,6 @@ void MainWindow::query()
     openQuery = !openQuery;
     if (!openQuery)
     {
-        myQueryLoop();
         _canvas->stop();
         cout << "unquery " << openQuery << endl;
         statusBar()->showMessage(QString(""));

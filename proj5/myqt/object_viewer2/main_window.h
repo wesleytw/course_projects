@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <QMenu>
 #include <QToolBar>
+#include <QEventLoop>
 
 class MainWindow : public QMainWindow
 {
