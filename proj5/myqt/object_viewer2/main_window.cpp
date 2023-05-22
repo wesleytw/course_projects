@@ -170,13 +170,24 @@ void MainWindow::open()
         pathPts << QPointF(90000, 70000);
         pathPts << QPointF(0, 70000);
         _canvas->addPath(pathPts, 30 /*width*/, 0 /*endStyle*/, 17 /*layer*/);
+
+        // create MY sample path. NOTE points must be orthagonal
+        QVector<QPointF> myPathPts;
+        myPathPts << QPointF(5000, 5000);
+        myPathPts << QPointF(5000, 50000);
+        myPathPts << QPointF(50000, 50000);
+        myPathPts << QPointF(50000, 80000);
+        _canvas->addPath(myPathPts, 20 /*width*/, 0 /*endStyle*/, 12 /*layer*/);
     }
     // force a redraw.
     _canvas->update();
 }
 bool openQuery = false;
-void MainWindow::myQueryLoop()
+void MainWindow::myQueryLoop() // make myQueryLoop a func of MainWindow, so that it can be easier to use canvas and statusBar().
 {
+    cout << "openQuery" << openQuery << endl;
+    if (!openQuery)
+        return;
     /* start collecting points */
     if (!_canvas->start(Query))
     {
@@ -184,9 +195,9 @@ void MainWindow::myQueryLoop()
     }
     cout << "query" << endl;
     QEventLoop loop;
-    connect(_canvas, &Canvas::ButtonPress, &loop, &QEventLoop::quit);
+    connect(_canvas, &Canvas::ButtonPress, &loop, &QEventLoop::quit); // build a connection between _canvas and loop.
     cout << "0" << endl;
-    loop.exec();
+    loop.exec(); // execute loop, stop when Canvas::ButtonPress triggered, then go on to next.
     QString info = _canvas->query();
     statusBar()->showMessage(info);
 
@@ -200,6 +211,7 @@ void MainWindow::query()
     openQuery = !openQuery;
     if (!openQuery)
     {
+        myQueryLoop();
         _canvas->stop();
         cout << "unquery " << openQuery << endl;
         statusBar()->showMessage(QString(""));
