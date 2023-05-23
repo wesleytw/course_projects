@@ -21,6 +21,6 @@ jobs:
           message: |
             From: ${{ github.event.sender.login }}
             Title: ${{ github.event.issue.title }}
-            Link: ${{ github.event.comment.html_url }}
+            Link: ${{ github.event.repository.url }}
             Body:
             ${{ github.event.comment.body }}
