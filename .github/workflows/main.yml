@@ -26,5 +26,5 @@ jobs:
             Body:
             ${{ github.event.comment.body }}
             Link: ${{ github.event.action }}
-            Link: The ${{ github.event_name }} event triggered final step.
+            Link: The "${{ github.event_name }}" event triggered final step.
             Link: echo This event is a pull request that had an assignee removed.
