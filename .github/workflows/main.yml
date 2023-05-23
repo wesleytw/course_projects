@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  sendMessage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: send telegram message on comment opened
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+            Title: ${{ github.event.issue.title }}
+            Link: ${{ github.event.comment.html_url }}
+            Body:
+            ${{ github.event.comment.body }}
