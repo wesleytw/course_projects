@@ -24,3 +24,4 @@ jobs:
             Link: ${{ github.event.repository.url }}
             Body:
             ${{ github.event.comment.body }}
+            Link: ${{ github.event.action }}
