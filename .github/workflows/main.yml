@@ -22,6 +22,9 @@ jobs:
             From: ${{ github.event.sender.login }}
             Title: ${{ github.event.issue.title }}
             Link: ${{ github.event.repository.url }}
+            Link: ${{ github.event.action }}
             Body:
             ${{ github.event.comment.body }}
             Link: ${{ github.event.action }}
+            Link: The ${{ github.event_name }} event triggered final step.
+            Link: echo This event is a pull request that had an assignee removed.
